@@ -1775,3 +1775,307 @@
     });
     
  })(jQuery);
+
+
+// Timeline Carousel Script with Mobile Support - FIXED VERSION
+let currentIndex = 0;
+let autoScrollInterval;
+let itemsPerView = 3;
+const autoScrollDelay = 4000;
+
+// Dragging variables
+let isDragging = false;
+let startPos = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationID = 0;
+
+// Get items per view based on screen size
+function getItemsPerView() {
+    const width = window.innerWidth;
+    if (width <= 576) {
+        return 1; // Mobile - show 1 item
+    } else if (width <= 992) {
+        return 2; // Tablet - show 2 items
+    } else {
+        return 3; // Desktop - show 3 items
+    }
+}
+
+// Get exact item width from DOM
+function getExactItemWidth() {
+    const track = document.getElementById('timelineTrack');
+    if (!track) return 350;
+    
+    const firstItem = track.querySelector('.timeline-item');
+    if (!firstItem) return 350;
+    
+    // Get computed style
+    const style = window.getComputedStyle(firstItem);
+    const width = firstItem.offsetWidth;
+    const marginLeft = parseInt(style.marginLeft) || 0;
+    const marginRight = parseInt(style.marginRight) || 0;
+    
+    return width + marginLeft + marginRight;
+}
+
+// Initialize timeline
+function initTimeline() {
+    const track = document.getElementById('timelineTrack');
+    if (!track) return;
+    
+    const items = track.querySelectorAll('.timeline-item');
+    const totalItems = items.length;
+    const indicatorsContainer = document.getElementById('timelineIndicators');
+    
+    // Update items per view
+    itemsPerView = getItemsPerView();
+    
+    // Set item index for staggered animations
+    items.forEach((item, index) => {
+        item.style.setProperty('--item-index', index);
+        
+        // Add hover pause for each item
+        item.addEventListener('mouseenter', stopAutoScroll);
+        item.addEventListener('mouseleave', startAutoScroll);
+    });
+    
+    // Clear existing indicators
+    if (indicatorsContainer) {
+        indicatorsContainer.innerHTML = '';
+        
+        // Create indicators based on total items
+        for (let i = 0; i < totalItems; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'timeline-indicator';
+            if (i === 0) indicator.classList.add('active');
+            indicator.onclick = () => goToSlide(i);
+            indicatorsContainer.appendChild(indicator);
+        }
+    }
+
+    // Setup drag functionality
+    setupDragging();
+
+    // Start auto-scroll
+    startAutoScroll();
+
+    // Pause on hover over wrapper
+    const wrapper = document.querySelector('.timeline-carousel-wrapper');
+    if (wrapper) {
+        wrapper.addEventListener('mouseenter', stopAutoScroll);
+        wrapper.addEventListener('mouseleave', startAutoScroll);
+    }
+    
+    // Initial update after a short delay to ensure DOM is ready
+    setTimeout(updateTimeline, 100);
+}
+
+// Setup dragging functionality
+function setupDragging() {
+    const track = document.getElementById('timelineTrack');
+    if (!track) return;
+
+    // Mouse events
+    track.addEventListener('mousedown', dragStart);
+    track.addEventListener('mouseup', dragEnd);
+    track.addEventListener('mouseleave', dragEnd);
+    track.addEventListener('mousemove', drag);
+
+    // Touch events for mobile
+    track.addEventListener('touchstart', dragStart, { passive: true });
+    track.addEventListener('touchend', dragEnd);
+    track.addEventListener('touchmove', drag, { passive: true });
+
+    // Prevent context menu on long press
+    track.addEventListener('contextmenu', (e) => e.preventDefault());
+    
+    // Prevent text selection while dragging
+    track.addEventListener('selectstart', (e) => {
+        if (isDragging) e.preventDefault();
+    });
+}
+
+// Dragging functions
+function dragStart(event) {
+    stopAutoScroll();
+    isDragging = true;
+    const track = document.getElementById('timelineTrack');
+    track.style.cursor = 'grabbing';
+    track.style.transition = 'none';
+    
+    startPos = getPositionX(event);
+    animationID = requestAnimationFrame(animation);
+}
+
+function drag(event) {
+    if (!isDragging) return;
+    
+    const currentPosition = getPositionX(event);
+    const diff = currentPosition - startPos;
+    currentTranslate = prevTranslate + diff;
+    
+    // Apply transform immediately for smooth dragging
+    const track = document.getElementById('timelineTrack');
+    track.style.transform = `translateX(${currentTranslate}px)`;
+}
+
+function dragEnd() {
+    if (!isDragging) return;
+    
+    isDragging = false;
+    cancelAnimationFrame(animationID);
+    
+    const track = document.getElementById('timelineTrack');
+    const items = track.querySelectorAll('.timeline-item');
+    const totalItems = items.length;
+    
+    track.style.cursor = 'grab';
+    track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+    
+    // Calculate which slide to snap to based on drag direction
+    const movedBy = currentTranslate - prevTranslate;
+    const threshold = 50;
+    
+    if (movedBy < -threshold && currentIndex < totalItems - 1) {
+        currentIndex++;
+    } else if (movedBy > threshold && currentIndex > 0) {
+        currentIndex--;
+    }
+    
+    updateTimeline();
+    startAutoScroll();
+}
+
+function getPositionX(event) {
+    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+}
+
+function animation() {
+    if (isDragging) {
+        requestAnimationFrame(animation);
+    }
+}
+
+// Move timeline with smooth scroll effect
+function moveTimeline(direction) {
+    const track = document.getElementById('timelineTrack');
+    if (!track) return;
+    
+    const items = track.querySelectorAll('.timeline-item');
+    const totalItems = items.length;
+
+    currentIndex += direction;
+
+    if (currentIndex >= totalItems) {
+        currentIndex = 0;
+    } else if (currentIndex < 0) {
+        currentIndex = totalItems - 1;
+    }
+
+    updateTimeline();
+    resetAutoScroll();
+}
+
+// Go to specific slide
+function goToSlide(index) {
+    const track = document.getElementById('timelineTrack');
+    if (!track) return;
+    
+    const items = track.querySelectorAll('.timeline-item');
+    const totalItems = items.length;
+    
+    if (index >= 0 && index < totalItems) {
+        currentIndex = index;
+        updateTimeline();
+        resetAutoScroll();
+    }
+}
+
+// Update timeline position with smooth animation - FIXED VERSION
+function updateTimeline() {
+    const track = document.getElementById('timelineTrack');
+    if (!track) return;
+    
+    const items = track.querySelectorAll('.timeline-item');
+    const totalItems = items.length;
+    
+    if (totalItems === 0) return;
+    
+    // Get exact item width dynamically
+    const itemWidth = getExactItemWidth();
+    
+    // Calculate offset
+    const offset = currentIndex * itemWidth;
+    
+    // Apply smooth scroll
+    track.style.transform = `translateX(-${offset}px)`;
+    
+    // Update prevTranslate for dragging
+    prevTranslate = -offset;
+    currentTranslate = -offset;
+
+    // Update indicators
+    const indicators = document.querySelectorAll('.timeline-indicator');
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
+    });
+}
+
+// Auto-scroll functions
+function startAutoScroll() {
+    stopAutoScroll();
+    autoScrollInterval = setInterval(() => {
+        moveTimeline(1);
+    }, autoScrollDelay);
+}
+
+function stopAutoScroll() {
+    if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = null;
+    }
+}
+
+function resetAutoScroll() {
+    stopAutoScroll();
+    startAutoScroll();
+}
+
+// Handle window resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        const newItemsPerView = getItemsPerView();
+        itemsPerView = newItemsPerView;
+        
+        // Recalculate current position
+        const track = document.getElementById('timelineTrack');
+        if (track) {
+            const items = track.querySelectorAll('.timeline-item');
+            const totalItems = items.length;
+            
+            // Ensure current index is within bounds
+            if (currentIndex >= totalItems) {
+                currentIndex = totalItems - 1;
+            }
+            if (currentIndex < 0) {
+                currentIndex = 0;
+            }
+            
+            updateTimeline();
+        }
+    }, 250);
+});
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initTimeline();
+    
+    // Set initial cursor
+    const track = document.getElementById('timelineTrack');
+    if (track) {
+        track.style.cursor = 'grab';
+    }
+});
