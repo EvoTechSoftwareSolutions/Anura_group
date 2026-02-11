@@ -16444,3 +16444,11 @@ img {
     padding-top: 30% !important;
   }
 }
+
+
+@media screen and (max-width:767px){
+  .managing--director{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
