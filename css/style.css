@@ -16452,3 +16452,10 @@ img {
     flex-direction: column-reverse;
   }
 }
+
+
+.ak-trusted-client-title {
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
