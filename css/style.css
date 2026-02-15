@@ -16520,7 +16520,7 @@ img {
     width: max-content;
 
     /* Smooth infinite scroll animation */
-    animation: marquee-scroll 30s linear infinite;
+    animation: marquee-scroll 60s linear infinite;
     will-change: transform;
 }
 
@@ -16538,9 +16538,9 @@ img {
 }
 
 .brands-marquee-item img {
-    height: 50px;
+    height: 120px;
     width: auto;
-    max-width: 120px;
+    max-width: 150px;
     object-fit: contain;
     /* opacity: 0.7; */
     filter: grayscale(0%);
@@ -16578,4 +16578,9 @@ img {
         height: 36px;
         max-width: 90px;
     }
+}
+
+
+.mision--div{
+  margin-top: -7rem;
 }
