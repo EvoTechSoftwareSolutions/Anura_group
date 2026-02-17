@@ -179,7 +179,8 @@
                                     <div class="row g-4">
                                         <div class="col-lg-12">
                                             <div class=" rounded-1 overflow-hidden wow zoomIn">
-                                                <img src="images/misc/Mahagedara Logo.png" class="w-100 wow scaleIn" alt="">
+                                                <img src="images/misc/Mahagedara Logo.png" class="w-100 wow scaleIn"
+                                                    alt="">
                                             </div>
                                         </div>
 
@@ -207,7 +208,8 @@
                                 business organization with a strong foundation in Sri Lankan entrepreneurship. Since our
                                 establishment, we have focused on building sustainable businesses through quality-driven
                                 operations, ethical governance, and customer-centric thinking.
-                                <br><br> Our diversified portfolio reflects our ability to adapt, innovate, and scale while
+                                <br><br> Our diversified portfolio reflects our ability to adapt, innovate, and scale
+                                while
                                 remaining firmly committed to local values and national development.
                             </p>
                             <!-- <a class="btn-main fx-slide wow fadeInUp" href="products.html"
@@ -220,41 +222,43 @@
 
                     <div class="row g-4">
                         <div class="col-md-3 col-6">
-                            <div class="de_count text-center wow fadeInRight" data-wow-delay=".0s">
+                            <div class="de_count text-center wow fadeInRight" data-wow-offset="10" data-wow-delay="0s">
                                 <i class="id-color fs-40 d-inline-block mb-3 icofont-briefcase-2"></i>
-                                <h3 class="fs-40 mb-0 lh-1-1"><span class="timer" data-to="49"
-                                        data-speed="3000">0</span>+</h3>
+                                <h3 class="fs-40 mb-0 lh-1-1"><span class="counter" data-target="49"
+                                        data-duration="3000">0</span>+</h3>
                                 Years of Experience
                             </div>
                         </div>
 
                         <div class="col-md-3 col-6">
-                            <div class="de_count text-center wow fadeInRight" data-wow-delay=".2s">
+                            <div class="de_count text-center wow fadeInRight" data-wow-offset="10"
+                                data-wow-delay="0.2s">
                                 <i class="id-color fs-40 d-inline-block mb-3 icofont-thumbs-up"></i>
-                                <h3 class="fs-40 mb-0 lh-1-1"><span class="timer" data-to="2500"
-                                        data-speed="3000">0</span>+</h3>
+                                <h3 class="fs-40 mb-0 lh-1-1"><span class="counter" data-target="2500"
+                                        data-duration="3000">0</span>+</h3>
                                 Island Wide Dealers
                             </div>
                         </div>
 
                         <div class="col-md-3 col-6">
-                            <div class="de_count text-center wow fadeInRight" data-wow-delay=".4s">
+                            <div class="de_count text-center wow fadeInRight" data-wow-offset="10"
+                                data-wow-delay="0.4s">
                                 <i class="id-color fs-40 d-inline-block mb-3 icofont-users-alt-3"></i>
-                                <h3 class="fs-40 mb-0 lh-1-1"><span class="timer" data-to="250"
-                                        data-speed="3000">0</span>+</h3>
+                                <h3 class="fs-40 mb-0 lh-1-1"><span class="counter" data-target="250"
+                                        data-duration="3000">0</span>+</h3>
                                 Employees
                             </div>
                         </div>
 
                         <div class="col-md-3 col-6">
-                            <div class="de_count text-center wow fadeInRight" data-wow-delay=".6s">
+                            <div class="de_count text-center wow fadeInRight" data-wow-offset="10"
+                                data-wow-delay="0.6s">
                                 <i class="id-color fs-40 d-inline-block mb-3 icofont-badge"></i>
-                                <h3 class="fs-40 mb-0 lh-1-1"><span class="timer" data-to="100"
-                                        data-speed="3000">0</span>+</h3>
+                                <h3 class="fs-40 mb-0 lh-1-1"><span class="counter" data-target="100"
+                                        data-duration="3000">0</span>+</h3>
                                 Brand Partners
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -1331,6 +1335,70 @@
             $(window).on("load", function () {
                 $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({ default_offset_pct: 0.5 });
                 $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({ default_offset_pct: 0.5, orientation: 'vertical' });
+            });
+        </script>
+
+        <!-- Animate.css for fadeInRight -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+        <!-- WOW.js for scroll animations -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+        <script>
+            // Initialize WOW.js
+            new WOW({
+                boxClass: 'wow',
+                animateClass: 'animate__animated', // animate.css v4+ class prefix
+                offset: 100,
+                mobile: true,
+                live: true
+            }).init();
+
+            // Counter Animation Function
+            function animateCounter(element) {
+                const target = parseInt(element.getAttribute('data-target'));
+                const duration = parseInt(element.getAttribute('data-duration'));
+                const start = 0;
+                const startTime = performance.now();
+
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    // Easing function for smooth animation
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    const current = Math.floor(start + (target - start) * easeOutQuart);
+
+                    element.textContent = current;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        element.textContent = target;
+                    }
+                }
+
+                requestAnimationFrame(updateCounter);
+            }
+
+            // Trigger counter when element comes into view
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px'
+            };
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        animateCounter(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all counter elements
+            document.querySelectorAll('.counter').forEach(counter => {
+                counterObserver.observe(counter);
             });
         </script>
 

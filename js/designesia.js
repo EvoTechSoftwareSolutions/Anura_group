@@ -719,21 +719,21 @@
      * counting number
      * --------------------------------------------------*/
     function de_counter() {
-    if (v_count === '1') return;
-    jQuery('.timer').each(function () {
-        var imagePos = jQuery(this).offset().top;
-        var topOfWindow = jQuery(window).scrollTop();
-        if (imagePos < topOfWindow + jQuery(window).height()) {
-            v_count = '1';
-            jQuery('.timer').each(function () {
-                var $this = jQuery(this);
-                var options = $.extend({}, {}, $this.data('countToOptions') || {});
-                $this.countTo(options);
-            });
-            return false; // break the loop
-        }
-    });
-}
+        if (v_count === '1') return;
+        jQuery('.timer').each(function () {
+            var imagePos = jQuery(this).offset().top;
+            var topOfWindow = jQuery(window).scrollTop();
+            if (imagePos < topOfWindow + jQuery(window).height()) {
+                v_count = '1';
+                jQuery('.timer').each(function () {
+                    var $this = jQuery(this);
+                    var options = $.extend({}, {}, $this.data('countToOptions') || {});
+                    $this.countTo(options);
+                });
+                return false; // break the loop
+            }
+        });
+    }
     /* --------------------------------------------------
      * progress bar
      * --------------------------------------------------*/
@@ -1759,18 +1759,18 @@
     });
 
     $(window).on('load', function () {
-    jQuery('#de-loader').fadeOut(500);
-    filter_gallery();
-    window.dispatchEvent(new Event('resize'));
-    filter_gallery();
-    masonry();
+        jQuery('#de-loader').fadeOut(500);
+        filter_gallery();
+        window.dispatchEvent(new Event('resize'));
+        filter_gallery();
+        masonry();
 
-    $('.grid').isotope({
-        itemSelector: '.grid-item'
+        $('.grid').isotope({
+            itemSelector: '.grid-item'
+        });
+        grid_gallery();
+        de_counter(); // FIXED: trigger counters on page load
     });
-    grid_gallery();
-    de_counter(); // FIXED: trigger counters on page load
-});
 
 })(jQuery);
 
