@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Japanese PCV, LCV & HCV Parts - Anura Group</title>
+    <link rel="icon" href="images/Anura-Logo-tab.png" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Anura Group - Japanese Vehicle Parts" name="description">
+    <meta content="" name="keywords">
+    <meta content="" name="author">
+
+    <!-- CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css">
+
+    <style>
+        /* Infinite Logo Carousel Styles */
+        .logo-carousel-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 80px 0;
+            overflow: clip;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .logo-carousel-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(40, 53, 230, 0.5), transparent);
+        }
+
+        .logo-carousel-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(40, 53, 230, 0.5), transparent);
+        }
+
+        /* Hidden section style */
+        .logo-carousel-section.hidden-section {
+            display: none;
+        }
+
+        /* Blurred section style */
+        .logo-carousel-section.blurred-section {
+            filter: blur(8px);
+            opacity: 0.3;
+            pointer-events: none;
+            transform: scale(0.98);
+        }
+
+        /* Active/Focused section style */
+        .logo-carousel-section.active-section {
+            display: block;
+            animation: fadeInScale 0.6s ease;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .carousel-header {
+            text-align: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .carousel-header h3 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background-color: #0066b3;
+            width: 60%;
+            padding: 8px 3px;
+            border-radius: 8px;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: max-content;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .carousel-track-rtl {
+            animation-name: scrollRTL;
+        }
+
+        .carousel-track-ltr {
+            animation-name: scrollLTR;
+        }
+
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        .logo-item {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 140px;
+            margin: 0 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .logo-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(40, 43, 230, 0.1);
+            border-color: rgba(40, 69, 230, 0.5);
+            box-shadow: 0 15px 40px rgba(43, 40, 230, 0.3);
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 60px;
+            object-fit: contain;
+            margin-bottom: 12px;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            filter: brightness(1) invert(0);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .logo-item h5 {
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        @keyframes scrollRTL {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes scrollLTR {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .carousel-row {
+            margin-bottom: 10px;
+        }
+
+        .carousel-row:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 950px) {
+            .carousel-header h3 {
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-item {
+                width: 180px;
+                height: 120px;
+                margin: 0 12px;
+                padding: 15px;
+            }
+
+            .logo-item img {
+                max-height: 50px;
+            }
+
+            .logo-item h5 {
+                font-size: 11px;
+            }
+
+            .carousel-header h3 {
+                width: 85%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-item {
+                width: 160px;
+                height: 110px;
+                margin: 0 10px;
+                padding: 12px;
+            }
+
+            .logo-item img {
+                max-height: 45px;
+            }
+
+            .carousel-header h3 {
+                font-size: 20px;
+            }
+        }
+
+        /* Product Hero Section */
+        .product-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 100px 0 80px;
+        }
+
+        .product-title {
+            font-size: 52px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .product-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 993px) {
+            .logo-carousel-section {
+                overflow: visible;
+            }
+
+            .carousel-header {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                padding: 15px 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* View All Button Styles */
+        .view-all-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .view-all-container.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .view-all-btn {
+            background: linear-gradient(135deg, #0066b3 0%, #004d99 100%);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(0, 102, 179, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .view-all-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 102, 179, 0.5);
+            background: linear-gradient(135deg, #0077cc 0%, #0066b3 100%);
+        }
+
+        /* Breadcrumb Navigation */
+        .product-nav {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product-nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .breadcrumb-custom {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .breadcrumb-custom a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-custom a:hover {
+            color: #0066b3;
+        }
+
+        .current-product-label {
+            background: rgba(0, 102, 179, 0.2);
+            border: 1px solid rgba(0, 102, 179, 0.5);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Section transition animations */
+        .section-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+
+<body class="dark-scheme">
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+
+        <!-- preloader begin -->
+        <div id="de-loader"></div>
+        <!-- preloader end -->
+
+        <!-- header begin -->
+        <header class="transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <div id="logo">
+                                    <a href="index.html">
+                                        <img class="logo-main" src="images/Anura-Logo-03.png" alt="">
+                                        <img class="logo-mobile" src="images/Anura-Logo-03.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                    <li><a class="menu-item" href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a class="menu-item" href="products.html">Our Products</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="tel:+94112449900" class="btn-main fx-slide hover-white"><span>Contact
+                                            Now</span></a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+            <!-- Product Hero Section -->
+            <section class="product-hero">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12 text-center">
+                            <div class="spacer-double"></div>
+                            <h1 class="product-title wow fadeInUp" data-wow-delay=".2s">Our Products</h1>
+                            <p class="product-subtitle wow fadeInUp" data-wow-delay=".4s">
+                                Premium OEM and aftermarket components — engineered for reliability and performance on
+                                Sri Lankan roads.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product Navigation Bar -->
+            <div class="product-nav" id="productNav" style="display: none;">
+                <div class="container">
+                    <div class="product-nav-content">
+                        <div class="breadcrumb-custom">
+                            <a href="index.html">Home</a> / <a href="products.html">Products</a> / <span
+                                id="currentProductName">Product</span>
+                        </div>
+                        <div class="current-product-label" id="currentProductLabel">
+                            Viewing: Product Name
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo Carousel Section 1: Japanese PCV, LCV & HCV Parts -->
+            <section class="logo-carousel-section section-transition" id="product01"
+                data-product-name="Japanese PCV, LCV & HCV Parts">
+                <div class="container-fluid">
+                    <div class="carousel-header">
+                        <h3>Japanese PCV, LCV & HCV Parts</h3>
+                    </div>
+                    <div class="carousel-row">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track carousel-track-rtl" style="animation-duration: 40s;">
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-01.png" alt="Rolon">
+                                    <h5>Brake Pads & Brake Shoes</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-02.png" alt="Rockman">
+                                    <h5>Piston, Piston Rings and Cylinder Liners</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-03.png" alt="Gabriel">
+                                    <h5>Gaskets</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-04.png" alt="MK Lide">
+                                    <h5>Brake Pads & Brake Shoes</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-05.png" alt="Goetze">
+                                    <h5>Suspensions</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-35.png" alt="Usha">
+                                    <h5>Timing Belts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-11.png" alt="Sam">
+                                    <h5>Cluth Master Pump</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-07.png" alt="Swiss">
+                                    <h5>Clutch Plates & Clutch Covers</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-08.png" alt="Suilum">
+                                    <h5>Shock Absorbers</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-10.png" alt="Fiem">
+                                    <h5>Shock Absorbers</h5>
+                                </div>
+                                <!-- Duplicate -->
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-01.png" alt="Rolon">
+                                    <h5>Brake Pads & Brake Shoes</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-02.png" alt="Rockman">
+                                    <h5>Piston, Piston Rings and Cylinder Liners</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-03.png" alt="Gabriel">
+                                    <h5>Gaskets</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-04.png" alt="MK Lide">
+                                    <h5>Brake Pads & Brake Shoes</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-05.png" alt="Goetze">
+                                    <h5>Suspensions</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-35.png" alt="Usha">
+                                    <h5>Timing Belts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-11.png" alt="Sam">
+                                    <h5>Cluth Master Pump</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-07.png" alt="Swiss">
+                                    <h5>Clutch Plates & Clutch Covers</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-08.png" alt="Suilum">
+                                    <h5>Shock Absorbers</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-10.png" alt="Fiem">
+                                    <h5>Shock Absorbers</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-row">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track carousel-track-ltr" style="animation-duration: 45s;">
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-12.png" alt="Rolon">
+                                    <h5>Suspension Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-13.png" alt="Rockman">
+                                    <h5>Suspensions</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-15.png" alt="Gabriel">
+                                    <h5>Wiper Blades / Horns</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-16.png" alt="MK Lide">
+                                    <h5>King Pin Sets</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-17.png" alt="Goetze">
+                                    <h5>Filters</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-18.png" alt="Usha">
+                                    <h5>Filters</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-19.png" alt="Sam">
+                                    <h5>Filters</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-14.png" alt="Swiss">
+                                    <h5>Ignition Coils</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-06.png" alt="Suilum">
+                                    <h5>Automative Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-37.png" alt="Fiem">
+                                    <h5>Shock Absorbers</h5>
+                                </div>
+                                <!-- Duplicate -->
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-12.png" alt="Rolon">
+                                    <h5>Suspension Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-13.png" alt="Rockman">
+                                    <h5>Suspensions</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-15.png" alt="Gabriel">
+                                    <h5>Wiper Blades / Horns</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-16.png" alt="MK Lide">
+                                    <h5>King Pin Sets</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-17.png" alt="Goetze">
+                                    <h5>Filters</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-18.png" alt="Usha">
+                                    <h5>Filters</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-19.png" alt="Sam">
+                                    <h5>Filters</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-14.png" alt="Swiss">
+                                    <h5>Ignition Coils</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-06.png" alt="Suilum">
+                                    <h5>Automative Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-37.png" alt="Fiem">
+                                    <h5>Shock Absorbers</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logo Carousel Section 2: Indian LCV & HCV Parts -->
+            <section class="logo-carousel-section section-transition" id="product02"
+                data-product-name="Indian LCV & HCV Parts">
+                <div class="container-fluid">
+                    <div class="carousel-header">
+                        <h3>Indian LCV & HCV Parts</h3>
+                    </div>
+                    <div class="carousel-row">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track carousel-track-rtl" style="animation-duration: 40s;">
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-20.png" alt="Rolon">
+                                    <h5>Gear Spare Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-21.png" alt="Rockman">
+                                    <h5>Bearings, Clutch Plates, Pressure Plates, Kingpin Sets, Universal Joints</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-22.png" alt="Gabriel">
+                                    <h5>Brake Parts, Auto Electrical Parts and Filters</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-23.png" alt="MK Lide">
+                                    <h5>Clutch Plates</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-24.png" alt="Goetze">
+                                    <h5>Brake Pads and Discs</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-25.png" alt="Usha">
+                                    <h5>Suspension Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-26.png" alt="Sam">
+                                    <h5>Brake Discs</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-0.png" alt="Swiss">
+                                    <h5>Water Pumps</h5>
+                                </div>
+                                <!-- Duplicate -->
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-20.png" alt="Rolon">
+                                    <h5>Gear Spare Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-21.png" alt="Rockman">
+                                    <h5>Bearings, Clutch Plates, Pressure Plates, Kingpin Sets, Universal Joints</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-22.png" alt="Gabriel">
+                                    <h5>Brake Parts, Auto Electrical Parts and Filters</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-23.png" alt="MK Lide">
+                                    <h5>Clutch Plates</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-24.png" alt="Goetze">
+                                    <h5>Brake Pads and Discs</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-25.png" alt="Usha">
+                                    <h5>Suspension Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-26.png" alt="Sam">
+                                    <h5>Brake Discs</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-0.png" alt="Swiss">
+                                    <h5>Water Pumps</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="carousel-row">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track carousel-track-ltr" style="animation-duration: 45s;">
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- Logo Carousel Section 3: Indian Two Wheeler & Three Wheeler Parts -->
+            <section class="logo-carousel-section section-transition" id="product03"
+                data-product-name="Indian Two Wheeler & Three Wheeler Parts">
+                <div class="container-fluid">
+                    <div class="carousel-header">
+                        <h3>Indian Two Wheeler & Three Wheeler Parts</h3>
+                    </div>
+                    <div class="carousel-row">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track carousel-track-rtl" style="animation-duration: 40s;">
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-28.png" alt="Rolon">
+                                    <h5> Chain Sprocket Set</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-29.png" alt="Rockman">
+                                    <h5>Motorcycle Chains</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-30.png" alt="Gabriel">
+                                    <h5>Spark Plug</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-32.png" alt="MK Lide">
+                                    <h5>Motorcycle Chains</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-0.png" alt="Goetze">
+                                    <h5>Pistons and Piston Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-33.png" alt="Usha">
+                                    <h5>Electrical Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-34.png" alt="Sam">
+                                    <h5>Engine Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-21.png" alt="Swiss">
+                                    <h5>Bearings</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-02.png" alt="Suilum">
+                                    <h5>Piston, Piston Rings</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-35.png" alt="Fiem">
+                                    <h5>Scooter Belts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-31.png" alt="FCC">
+                                    <h5>Cables</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-24.png" alt="AR">
+                                    <h5>Brake Pads and Discs</h5>
+                                </div>
+                                <!-- Duplicate -->
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-28.png" alt="Rolon">
+                                    <h5> Chain Sprocket Set</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-29.png" alt="Rockman">
+                                    <h5>Motorcycle Chains</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-30.png" alt="Gabriel">
+                                    <h5>Spark Plug</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-32.png" alt="MK Lide">
+                                    <h5>Motorcycle Chains</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-0.png" alt="Goetze">
+                                    <h5>Pistons and Piston Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-33.png" alt="Usha">
+                                    <h5>Electrical Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-34.png" alt="Sam">
+                                    <h5>Engine Parts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-21.png" alt="Swiss">
+                                    <h5>Bearings</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-02.png" alt="Suilum">
+                                    <h5>Piston, Piston Rings</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-35.png" alt="Fiem">
+                                    <h5>Scooter Belts</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-31.png" alt="FCC">
+                                    <h5>Cables</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logo-brands/Single/Brand Logos-24.png" alt="AR">
+                                    <h5>Brake Pads and Discs</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="carousel-row">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track carousel-track-ltr" style="animation-duration: 45s;">
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- Logo Carousel Section 4: Two Wheeler & Three Wheeler Battery -->
+            <section class="logo-carousel-section section-transition" id="product04"
+                data-product-name="Two Wheeler & Three Wheeler Battery">
+                <div class="container-fluid">
+                    <div class="carousel-header">
+                        <h3>Two Wheeler & Three Wheeler Battery</h3>
+                    </div>
+                    <div class="carousel-row">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track carousel-track-rtl" style="animation-duration: 40s;">
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                                <!-- Duplicate -->
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-row">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track carousel-track-ltr" style="animation-duration: 45s;">
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                                <!-- Duplicate -->
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logo Carousel Section 5: Automotive & Industrial Lubricants -->
+            <section class="logo-carousel-section section-transition" id="product05"
+                data-product-name="Automotive & Industrial Lubricants">
+                <div class="container-fluid">
+                    <div class="carousel-header">
+                        <h3>Automotive & Industrical Lubricants</h3>
+                    </div>
+                    <div class="carousel-row">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track carousel-track-rtl" style="animation-duration: 40s;">
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                                <!-- Duplicate -->
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-row">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track carousel-track-ltr" style="animation-duration: 45s;">
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                                <!-- Duplicate -->
+                                <div class="logo-item"><img src="images/logos/rolon.png" alt="Rolon">
+                                    <h5>CHAIN KIT, TIMING CHAIN, FAN BELT</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/rockman.png" alt="Rockman">
+                                    <h5>CHAIN KIT, TIMING CHAIN, BREAK SHOE, BALL RACER, CLUTCH PLATE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/gabriel.png" alt="Gabriel">
+                                    <h5>SHOCKER & SHOCKER COMPONENTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/mklide.png" alt="MK Lide">
+                                    <h5>CLUTCH PLATES, BRAKE SHOES, DISC PAD & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/goetze.png" alt="Goetze">
+                                    <h5>PISTON RINGS, BLOCK KITS, VALVE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/usha.png" alt="Usha">
+                                    <h5>PISTONS, RINGS, BLOCK KITS, VALVES, PLUG & CLUTCH ASSY</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/sam.png" alt="Sam">
+                                    <h5>PISTONS & RINGS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/swiss.png" alt="Swiss">
+                                    <h5>ELECTRICAL PARTS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/suilum.png" alt="Suilum">
+                                    <h5>WIRING & ELECTRICAL SPARE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fiem.png" alt="Fiem">
+                                    <h5>LIGHTS, INDICATORS</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/fcc.png" alt="FCC">
+                                    <h5>CLUTCH PLATES, CLUTCH ASSEMBLY & BREAK SHOE</h5>
+                                </div>
+                                <div class="logo-item"><img src="images/logos/ar.png" alt="AR">
+                                    <h5>BREAK SHOES, DISC PADS & DRUMS</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- View All Products Button -->
+            <div class="view-all-container" id="viewAllContainer">
+                <button class="view-all-btn" onclick="window.location.href='single.html'">
+                    <i class="icofont-grid"></i> View All Products
+                </button>
+            </div>
+
+            <!-- Call to Action Section -->
+            <section class="bg-color text-light pt-60 pb-50">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-9">
+                            <h3 class="mb-0 fs-32">Want to get in touch with us?</h3>
+                        </div>
+                        <div class="col-lg-3 text-lg-end">
+                            <a class="btn-main fx-slide btn-line"
+                                href="contact.html"><span>Let's&nbsp;&nbsp;&nbsp;Connect</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content end -->
+
+        <!-- footer begin -->
+        <footer>
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-sm-6">
+                        <img src="images/Anura-Logo-03.png" class="logo-footer" alt="">
+                        <div class="spacer-20"></div>
+                        <p>Anura Group is a professionally managed business organization with a strong foundation in Sri
+                            Lankan entrepreneurship.</p>
+                        <div class="social-icons mb-sm-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="services.html">Our Products</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="widget">
+                                    <h5>Our Products</h5>
+                                    <ul>
+                                        <li><a href="services.html">Japanese Vehicle Parts</a></li>
+                                        <li><a href="services.html">Indian Vehicle Parts</a></li>
+                                        <li><a href="services.html">Battery</a></li>
+                                        <li><a href="services.html">Lubricant</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                        <div class="widget">
+                            <h5>Contact Us</h5>
+                            <div class="fw-bold text-white">
+                                <i class="icofont-location-pin me-2 id-color"></i>Head Office
+                            </div>
+                            No. 57, Jethawana Road, Colombo 14.
+                            <div class="spacer-20"></div>
+                            <div class="fw-bold text-white">
+                                <i class="icofont-phone me-2 id-color"></i>Call Us
+                            </div>
+                            011 2478134/5 / 011 2449900 /011 2459415
+                            <div class="spacer-20"></div>
+                            <div class="fw-bold text-white">
+                                <i class="icofont-envelope me-2 id-color"></i>Email Us
+                            </div>
+                            <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                data-cfemail="9cf5f2faf3dcfdf2e9eefdfbeef3e9ecb2f0f7">[email&#160;protected]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+    </div>
+
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+        <div id="extra-content">
+            <img src="images/Anura-Logo-03.png" class="w-150px" alt="">
+            <div class="spacer-30-line"></div>
+            <h5>Contact Us</h5>
+            <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>No. 57, Jethawana Road, Colombo 14.</div>
+            <div><i class="icofont-envelope me-2 op-5"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                    data-cfemail="10797e767f50717e65627177627f65603e7c7b">[email&#160;protected]</a></div>
+            <div class="spacer-30-line"></div>
+            <h5>About Us</h5>
+            <p>Anura Group is a professionally managed business organization with a strong foundation in Sri Lankan
+                entrepreneurship.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript Files -->
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+
+    <script>
+        // Product Section Management
+        (function () {
+            const CONFIG = {
+                inactiveSectionMode: 'hide',
+                scrollOffset: 100
+            };
+
+            function handleProductSections() {
+                const hash = window.location.hash;
+                const sections = document.querySelectorAll('.logo-carousel-section');
+                const productNav = document.getElementById('productNav');
+                const viewAllContainer = document.getElementById('viewAllContainer');
+                const currentProductName = document.getElementById('currentProductName');
+                const currentProductLabel = document.getElementById('currentProductLabel');
+
+                if (!hash || hash === '#') {
+                    sections.forEach(section => {
+                        section.classList.remove('hidden-section', 'blurred-section', 'active-section');
+                    });
+                    if (productNav) productNav.style.display = 'none';
+                    if (viewAllContainer) viewAllContainer.classList.remove('visible');
+                    return;
+                }
+
+                const targetId = hash.substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (!targetSection) {
+                    sections.forEach(section => {
+                        section.classList.remove('hidden-section', 'blurred-section', 'active-section');
+                    });
+                    if (productNav) productNav.style.display = 'none';
+                    if (viewAllContainer) viewAllContainer.classList.remove('visible');
+                    return;
+                }
+
+                const productName = targetSection.getAttribute('data-product-name') || 'Product Details';
+
+                if (productNav) {
+                    productNav.style.display = 'block';
+                    if (currentProductName) currentProductName.textContent = productName;
+                    if (currentProductLabel) currentProductLabel.textContent = 'Viewing: ' + productName;
+                }
+
+                if (viewAllContainer) {
+                    viewAllContainer.classList.add('visible');
+                }
+
+                sections.forEach(section => {
+                    section.classList.remove('hidden-section', 'blurred-section', 'active-section');
+
+                    if (section.id === targetId) {
+                        section.classList.add('active-section');
+                    } else {
+                        if (CONFIG.inactiveSectionMode === 'hide') {
+                            section.classList.add('hidden-section');
+                        } else {
+                            section.classList.add('blurred-section');
+                        }
+                    }
+                });
+
+                setTimeout(() => {
+                    const header = document.querySelector('header');
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    const targetTop = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - CONFIG.scrollOffset;
+
+                    window.scrollTo({
+                        top: targetTop,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+
+            window.showAllProducts = function () {
+                history.pushState('', document.title, window.location.pathname + window.location.search);
+
+                const sections = document.querySelectorAll('.logo-carousel-section');
+                const productNav = document.getElementById('productNav');
+                const viewAllContainer = document.getElementById('viewAllContainer');
+
+                sections.forEach(section => {
+                    section.classList.remove('hidden-section', 'blurred-section', 'active-section');
+                });
+
+                if (productNav) productNav.style.display = 'none';
+                if (viewAllContainer) viewAllContainer.classList.remove('visible');
+
+                const productHero = document.querySelector('.product-hero');
+                if (productHero) {
+                    productHero.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+
+            window.addEventListener('hashchange', handleProductSections);
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', handleProductSections);
+            } else {
+                handleProductSections();
+            }
+
+            window.addEventListener('popstate', handleProductSections);
+        })();
+
+        // Sticky header adjustment for mobile
+        (function () {
+            function updateStickyTop() {
+                var mainHeader = document.querySelector('header');
+                var carouselHeaders = document.querySelectorAll('.carousel-header');
+
+                if (!mainHeader || carouselHeaders.length === 0) return;
+
+                if (window.innerWidth <= 993) {
+                    var headerHeight = mainHeader.offsetHeight;
+                    carouselHeaders.forEach(function (el) {
+                        el.style.top = headerHeight + 'px';
+                    });
+                } else {
+                    carouselHeaders.forEach(function (el) {
+                        el.style.top = '';
+                    });
+                }
+            }
+
+            updateStickyTop();
+            window.addEventListener('scroll', updateStickyTop);
+            window.addEventListener('resize', updateStickyTop);
+        })();
+    </script>
+</body>
+
+</html>
