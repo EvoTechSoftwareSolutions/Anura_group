@@ -15506,8 +15506,9 @@ img {
   position: relative;
   overflow: hidden;
   flex: 1;
-  padding: 10px 20px;
+  padding: 15px 20px;
   min-height: 550px;
+  /* background-color: red; */
 }
 
 /* Timeline Track */

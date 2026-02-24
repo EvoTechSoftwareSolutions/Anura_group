@@ -18,6 +18,60 @@
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css">
 
+    <style>
+        /* =============================================
+           TIMELINE HOVER ANIMATIONS
+           Matching products page .logo-item hover style
+           ============================================= */
+
+        .timeline-card {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            cursor: pointer;
+            user-select: none;
+            border: 2px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-10px) scale(1.05) !important;
+            background: rgba(40, 43, 230, 0.15) !important;
+            border: 2px solid rgba(40, 69, 230, 0.8) !important;
+            box-shadow: 0 15px 40px rgba(43, 40, 230, 0.35), 0 0 0 1px rgba(40, 69, 230, 0.3) !important;
+        }
+
+        .timeline-dot {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.4) !important;
+            box-shadow: 0 0 20px rgba(40, 69, 230, 0.9), 0 0 40px rgba(40, 69, 230, 0.5) !important;
+            background: #2845e6 !important;
+        }
+
+        .timeline-year {
+            transition: color 0.4s ease, text-shadow 0.4s ease !important;
+        }
+
+        .timeline-item:hover .timeline-year {
+            color: #ffffff !important;
+            text-shadow: 0 0 20px rgba(60, 120, 255, 0.9) !important;
+        }
+
+        .timeline-card p {
+            transition: color 0.3s ease, letter-spacing 0.3s ease !important;
+        }
+
+        .timeline-card:hover p {
+            color: #ffffff !important;
+            letter-spacing: 0.5px !important;
+        }
+    </style>
+
 </head>
 
 <body class="dark-scheme">
@@ -174,16 +228,26 @@
                         <div class="col-lg-12">
                             <h3 class="mb-4 wow fadeInRight">Our Mission</h3>
                             <p class="fs-18 fw-600 lh-1-4 wow fadeInUp">
-                                We are dedicated to delivering high-quality products and solutions that exceed customer expectations. Our mission is ingrained in our workforce, driving us to achieve operational excellence through continuous improvement. Timely and accurate customer service is a top priority.
+                                We are dedicated to delivering high-quality products and solutions that exceed customer
+                                expectations. Our mission is ingrained in our workforce, driving us to achieve
+                                operational excellence through continuous improvement. Timely and accurate customer
+                                service is a top priority.
                             </p>
                             <p class="fs-18 fw-600 lh-1-4 wow fadeInUp">
-                                Empowering our employees fosters a culture of growth and contribution, while our management is committed to competence and ethical actions. We value our employees, ensuring a secure and inclusive work environment that encourages open communication.
+                                Empowering our employees fosters a culture of growth and contribution, while our
+                                management is committed to competence and ethical actions. We value our employees,
+                                ensuring a secure and inclusive work environment that encourages open communication.
                             </p>
                             <p class="fs-18 fw-600 lh-1-4 wow fadeInUp">
-We uphold equal opportunities for employment and career advancement. Research, innovation, and accountability drive our progress, reflected in investments in new equipment, facilities, and product launches. Adherence to company policies and procedures guides performance improvement.
+                                We uphold equal opportunities for employment and career advancement. Research,
+                                innovation, and accountability drive our progress, reflected in investments in new
+                                equipment, facilities, and product launches. Adherence to company policies and
+                                procedures guides performance improvement.
                             </p>
                             <p class="fs-18 fw-600 lh-1-4 wow fadeInUp">
-Our responsibility extends to all stakeholders, and we aim for sustainable profitability. United with one vision and goal, we move forward as a cohesive unit, advancing from strength to strength.
+                                Our responsibility extends to all stakeholders, and we aim for sustainable
+                                profitability. United with one vision and goal, we move forward as a cohesive unit,
+                                advancing from strength to strength.
                             </p>
                         </div>
                     </div>
@@ -203,7 +267,8 @@ Our responsibility extends to all stakeholders, and we aim for sustainable profi
                                 <div class="col-md-7 mt-3 mt-md-0 mt-lg-0">
                                     <div class="p-3 align-items-center">
                                         <h2 class="mb-0 fadeInRight">Mr.Anura Sarath Kumara</h2>
-                                        <h3 class="mb-2 text-muted fadeInRight" style="letter-spacing: 8px;">Founder and Chairman</h3>
+                                        <h3 class="mb-2 text-muted fadeInRight" style="letter-spacing: 8px;">Founder and
+                                            Chairman</h3>
                                         <br>
                                         <p class="lh-1-4 wow fadeInRight"><b>A Foundation Built on Trust</b></p>
                                         <p class="lh-1-4 wow fadeInRight">Anura Group was established with the belief
@@ -212,7 +277,7 @@ Our responsibility extends to all stakeholders, and we aim for sustainable profi
                                             guide the group today.</p>
                                         <p class="lh-1-4 wow fadeInRight">As the organization evolves, this foundation
                                             remains unchanged, shaping our growth and reinforcing our responsibility to
-                                            contribute positively to Sri Lanka’s business landscape.</p>
+                                            contribute positively to Sri Lanka's business landscape.</p>
                                         <p class="lh-1-4 wow fadeInRight">- Founder -</p>
                                         <div class="social-icons fadeInRight">
                                             <a href="#"><i
@@ -243,7 +308,7 @@ Our responsibility extends to all stakeholders, and we aim for sustainable profi
                                             grounded in discipline, trust, and long-term vision. We believe sustainable
                                             success is achieved by balancing performance with responsibility—towards our
                                             customers, employees, and the nation.</p>
-                                        <p class="lh-1-4 wow fadeInLeft">I am proud of our team’s commitment and
+                                        <p class="lh-1-4 wow fadeInLeft">I am proud of our team's commitment and
                                             grateful for the confidence placed in us by our partners. As we move
                                             forward, we remain focused on strengthening our capabilities, embracing
                                             innovation, and delivering consistent value.</p>
@@ -261,6 +326,45 @@ Our responsibility extends to all stakeholders, and we aim for sustainable profi
                                 <div class="col-md-5 mt-3 mt-md-0 mt-lg-0">
                                     <img src="images/team/Mr.Lahiru.webp" class="w-100" alt=""
                                         style="border-radius: 8px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="col-12 fadeInRight">
+                        <div class="bg-dark relative rounded-1 overflow-hidden"
+                            style="box-shadow: rgba(155, 202, 243, 0.48) 6px 2px 16px 0px, rgba(30, 2, 192, 0.8) -6px -2px 16px 0px;">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <img src="images/team/3.webp" class="w-100" alt="" style="border-radius: 8px;">
+                                </div>
+                                <div class="col-md-7 mt-3 mt-md-0 mt-lg-0">
+                                    <div class="p-3 align-items-center">
+                                        <h2 class="mb-0 fadeInRight">Mr.Lorem Ipsum</h2>
+                                        <h3 class="mb-2 text-muted fadeInRight" style="letter-spacing: 8px;">Lorem Ipsum
+                                        </h3>
+                                        <br>
+                                        <p class="lh-1-4 wow fadeInRight"><b>A Foundation Built on Trust</b></p>
+                                        <p class="lh-1-4 wow fadeInRight">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Ex illo excepturi totam maiores tempore corporis
+                                            exercitationem quam rerum doloremque nesciunt nemo mollitia similique
+                                            accusamus hic perspiciatis sit, nobis, nihil unde?</p>
+                                        <p class="lh-1-4 wow fadeInRight">Lorem, ipsum dolor sit amet consectetur
+                                            adipisicing elit. Repudiandae, amet? Illo delectus blanditiis quaerat aut,
+                                            iste perferendis et. Illo ratione iusto quas assumenda nulla, cum odio sed
+                                            quam libero id.</p>
+                                        <p class="lh-1-4 wow fadeInRight">- Lorem -</p>
+                                        <div class="social-icons fadeInRight">
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -322,22 +426,34 @@ Our responsibility extends to all stakeholders, and we aim for sustainable profi
                 </div>
             </section>
 
-            
+
 
             <section class="bg-dark-2">
                 <div class="container">
                     <div class="row g-4">
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <h2 class="wow fadeInUp" data-wow-delay=".2s">Our Network</h2>
-                            <!-- <p class="lh-1-4 wow fadeInUp">Empowering our employees fosters a culture of
-                                growth and contribution, while our management is committed to competence and ethical
-                                actions. We value our employees, ensuring a secure and inclusive work environment that
-                                encourages open communication.</p> -->
+                            <p class="lh-1-4 wow fadeInUp">Anura Group is supported by a strong and well-established
+                                islandwide distribution network, strategically structured to ensure the timely
+                                availability of OEM and aftermarket spare parts across Sri Lanka. Our logistics and
+                                supply chain systems are designed for efficiency, enabling consistent product flow from
+                                international suppliers to local markets without disruption.</p>
+                            <p>Through long-standing partnerships with trusted dealers, retailers and service providers,
+                                we maintain a reliable presence across key regions of the country. This extensive
+                                network allows us to respond quickly to market demands, support workshops and fleet
+                                operators with dependable supply and ensure customers receive quality products when and
+                                where they need them.
+                                Backed by operational discipline and relationship-driven collaboration, our network
+                                stands as a cornerstone of Anura Group's commitment to reliability, accessibility, and
+                                customer confidence nationwide.</p>
                         </div>
-                        <div class="col-lg-12">
-                            <iframe
+                        <div class="col-lg-6">
+                            <div class="col-lg-12" style="display: flex; justify-content: center; align-items: center;">
+                                <img src="images/locations/map.jpeg" height="500">
+                                <!-- <iframe
                                 src="https://www.google.com/maps/d/embed?mid=1yiqg4q993h65ZbW_lSxrzd1jfbVlv8o&ehbc=2E312F"
-                                width="100%" height="480"></iframe>
+                                width="100%" height="480"></iframe> -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -502,7 +618,7 @@ Our responsibility extends to all stakeholders, and we aim for sustainable profi
                                         <div class="timeline-item timeline-top">
                                             <div class="timeline-content">
                                                 <div class="timeline-card">
-                                                    <p>Group was restructured in to LLC’s</p>
+                                                    <p>Group was restructured in to LLC's</p>
                                                 </div>
                                             </div>
                                             <div class="timeline-dot"></div>
@@ -529,6 +645,61 @@ Our responsibility extends to all stakeholders, and we aim for sustainable profi
 
                             <!-- Timeline Indicators -->
                             <div class="timeline-indicators" id="timelineIndicators"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-dark-2">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Overview</h2>
+                            <!-- <p class="lh-1-4 wow fadeInUp">Anura Group is supported by a strong and well-established
+                                islandwide distribution network, strategically structured to ensure the timely
+                                availability of OEM and aftermarket spare parts across Sri Lanka. Our logistics and
+                                supply chain systems are designed for efficiency, enabling consistent product flow from
+                                international suppliers to local markets without disruption.</p>
+                            <p>Through long-standing partnerships with trusted dealers, retailers and service providers,
+                                we maintain a reliable presence across key regions of the country. This extensive
+                                network allows us to respond quickly to market demands, support workshops and fleet
+                                operators with dependable supply and ensure customers receive quality products when and
+                                where they need them.
+                                Backed by operational discipline and relationship-driven collaboration, our network
+                                stands as a cornerstone of Anura Group's commitment to reliability, accessibility, and
+                                customer confidence nationwide.</p> -->
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-12" style="display: flex; justify-content: center; align-items: center;">
+                                <video width="auto" height="auto" controls>
+                                    <source src="images/testimonial/corporate-video.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Testimonials</h2>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                    <video width="100%" controls>
+                                        <source src="images/testimonial/tesimonial-video-1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                    <video width="100%" controls>
+                                        <source src="images/testimonial/tesimonial-video-2.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -692,6 +863,191 @@ Our responsibility extends to all stakeholders, and we aim for sustainable profi
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
+
+    <script>
+        (function () {
+            'use strict';
+
+            const track = document.getElementById('timelineTrack');
+            const dotsWrap = document.getElementById('timelineIndicators');
+            const container = document.querySelector('.timeline-carousel-container');
+            const prevBtn = document.querySelector('.timeline-prev');
+            const nextBtn = document.querySelector('.timeline-next');
+
+            if (!track || !container) return;
+
+            /* ── Collect original items ─────────────────────────── */
+            const origItems = Array.from(track.querySelectorAll('.timeline-item:not(.tl-clone)'));
+            const origCount = origItems.length;
+
+            let perView = 4;
+            let current = 0;          /* logical index into origItems */
+            let isTransitioning = false;
+            let autoTimer;
+
+            function getPerView() {
+                const w = window.innerWidth;
+                if (w >= 1200) return 4;
+                if (w >= 768) return 3;
+                if (w >= 480) return 2;
+                return 1;
+            }
+
+            /* ── Clone buffer ───────────────────────────────────── */
+            function setupClones() {
+                track.querySelectorAll('.tl-clone').forEach(el => el.remove());
+
+                /* Prepend: last perView originals */
+                for (let i = perView - 1; i >= 0; i--) {
+                    const src = origItems[(origCount - perView + i + origCount) % origCount];
+                    const clone = src.cloneNode(true);
+                    clone.classList.add('tl-clone');
+                    track.insertBefore(clone, track.firstChild);
+                }
+
+                /* Append: first perView originals */
+                for (let i = 0; i < perView; i++) {
+                    const clone = origItems[i % origCount].cloneNode(true);
+                    clone.classList.add('tl-clone');
+                    track.appendChild(clone);
+                }
+            }
+
+            function itemWidthPx() {
+                const firstItem = track.querySelector('.timeline-item');
+                return firstItem ? firstItem.offsetWidth : 200;
+            }
+
+            function setTransform(idx, animate) {
+                const totalIdx = perView + idx;          /* perView prepended clones offset */
+                const px = totalIdx * itemWidthPx();
+                track.style.transition = animate
+                    ? 'transform 0.55s cubic-bezier(0.4, 0, 0.2, 1)'
+                    : 'none';
+                track.style.transform = 'translateX(-' + px + 'px)';
+            }
+
+            /* ── Dots ───────────────────────────────────────────── */
+            function totalDots() { return Math.ceil(origCount / perView); }
+
+            function activeDotIdx() {
+                const norm = ((current % origCount) + origCount) % origCount;
+                return Math.floor(norm / perView);
+            }
+
+            function buildDots() {
+                dotsWrap.innerHTML = '';
+                const n = totalDots();
+                for (let i = 0; i < n; i++) {
+                    const btn = document.createElement('button');
+                    btn.className = 'timeline-indicator-dot';
+                    btn.setAttribute('aria-label', 'Page ' + (i + 1));
+                    btn.addEventListener('click', () => { goTo(i * perView); resetAuto(); });
+                    dotsWrap.appendChild(btn);
+                }
+                updateDots();
+            }
+
+            function updateDots() {
+                const active = activeDotIdx();
+                dotsWrap.querySelectorAll('.timeline-indicator-dot')
+                    .forEach((d, i) => d.classList.toggle('active', i === active));
+            }
+
+            /* ── Movement ───────────────────────────────────────── */
+            function goTo(idx, animate = true) {
+                current = idx;
+                setTransform(current, animate);
+                updateDots();
+                if (animate) {
+                    isTransitioning = true;
+                    setTimeout(() => { isTransitioning = false; }, 600);
+                }
+            }
+
+            function next() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                current++;
+                setTransform(current, true);
+                updateDots();
+
+                if (current >= origCount) {
+                    setTimeout(() => {
+                        current = current % origCount;
+                        setTransform(current, false);
+                        updateDots();
+                        isTransitioning = false;
+                    }, 560);
+                } else {
+                    setTimeout(() => { isTransitioning = false; }, 600);
+                }
+            }
+
+            function prev() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                current--;
+                setTransform(current, true);
+                updateDots();
+
+                if (current < 0) {
+                    setTimeout(() => {
+                        current = origCount + current;
+                        setTransform(current, false);
+                        updateDots();
+                        isTransitioning = false;
+                    }, 560);
+                } else {
+                    setTimeout(() => { isTransitioning = false; }, 600);
+                }
+            }
+
+            /* Expose globally so onclick="moveTimeline()" still works */
+            window.moveTimeline = function (dir) {
+                if (dir > 0) { next(); resetAuto(); }
+                else { prev(); resetAuto(); }
+            };
+
+            /* ── Auto-play ──────────────────────────────────────── */
+            function startAuto() { autoTimer = setInterval(next, 4000); }
+            function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+            /* ── Touch / Swipe ──────────────────────────────────── */
+            let touchX = 0;
+            track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); }
+            });
+
+            /* ── Init ───────────────────────────────────────────── */
+            function init() {
+                perView = getPerView();
+                current = 0;
+                setupClones();
+                /* Force reflow so offsetWidth is correct after DOM change */
+                track.style.transition = 'none';
+                void track.offsetWidth;
+                setTransform(current, false);
+                buildDots();
+            }
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(init, 200);
+            });
+
+            /* Run after full page load so images/fonts don't shift widths */
+            if (document.readyState === 'complete') {
+                init(); startAuto();
+            } else {
+                window.addEventListener('load', () => { init(); startAuto(); });
+            }
+
+        })();
+    </script>
 
 </body>
 
