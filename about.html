@@ -873,6 +873,7 @@
             const container = document.querySelector('.timeline-carousel-container');
             const prevBtn = document.querySelector('.timeline-prev');
             const nextBtn = document.querySelector('.timeline-next');
+            const scrollHint = document.getElementById('timelineScrollHint');
 
             if (!track || !container) return;
 
@@ -884,6 +885,15 @@
             let current = 0;          /* logical index into origItems */
             let isTransitioning = false;
             let autoTimer;
+            let userInteracted = false;
+
+            /* Hide scroll hint after first user interaction */
+            function hideScrollHint() {
+                if (!userInteracted && scrollHint) {
+                    userInteracted = true;
+                    scrollHint.classList.add('hidden');
+                }
+            }
 
             function getPerView() {
                 const w = window.innerWidth;
@@ -922,7 +932,7 @@
                 const totalIdx = perView + idx;          /* perView prepended clones offset */
                 const px = totalIdx * itemWidthPx();
                 track.style.transition = animate
-                    ? 'transform 0.55s cubic-bezier(0.4, 0, 0.2, 1)'
+                    ? 'transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                     : 'none';
                 track.style.transform = 'translateX(-' + px + 'px)';
             }
@@ -942,7 +952,7 @@
                     const btn = document.createElement('button');
                     btn.className = 'timeline-indicator-dot';
                     btn.setAttribute('aria-label', 'Page ' + (i + 1));
-                    btn.addEventListener('click', () => { goTo(i * perView); resetAuto(); });
+                    btn.addEventListener('click', () => { goTo(i * perView); resetAuto(); hideScrollHint(); });
                     dotsWrap.appendChild(btn);
                 }
                 updateDots();
@@ -961,7 +971,7 @@
                 updateDots();
                 if (animate) {
                     isTransitioning = true;
-                    setTimeout(() => { isTransitioning = false; }, 600);
+                    setTimeout(() => { isTransitioning = false; }, 700);
                 }
             }
 
@@ -978,9 +988,9 @@
                         setTransform(current, false);
                         updateDots();
                         isTransitioning = false;
-                    }, 560);
+                    }, 660);
                 } else {
-                    setTimeout(() => { isTransitioning = false; }, 600);
+                    setTimeout(() => { isTransitioning = false; }, 700);
                 }
             }
 
@@ -997,14 +1007,15 @@
                         setTransform(current, false);
                         updateDots();
                         isTransitioning = false;
-                    }, 560);
+                    }, 660);
                 } else {
-                    setTimeout(() => { isTransitioning = false; }, 600);
+                    setTimeout(() => { isTransitioning = false; }, 700);
                 }
             }
 
             /* Expose globally so onclick="moveTimeline()" still works */
             window.moveTimeline = function (dir) {
+                hideScrollHint();
                 if (dir > 0) { next(); resetAuto(); }
                 else { prev(); resetAuto(); }
             };
@@ -1018,7 +1029,7 @@
             track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
             track.addEventListener('touchend', e => {
                 const diff = touchX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); }
+                if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); hideScrollHint(); }
             });
 
             /* ── Init ───────────────────────────────────────────── */
