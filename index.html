@@ -317,6 +317,16 @@
                             <!-- Slides -->
                             <div class="swiper-slide">
                                 <div class="swiper-inner" data-bgimage="url(images/slider/slider4.jpg)"
+                                    style="margin-top: -12rem;">
+                                    <div class="gradient-edge-top h-0 op-5"></div>
+                                    <div class="gradient-edge-bottom h-0"></div>
+                                    <div class="sw-overlay op-6"></div>
+                                </div>
+                            </div>
+
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class="swiper-inner" data-bgimage="url(images/slider/slider5.jpeg)"
                                     style="margin-top: -10rem;">
                                     <div class="gradient-edge-top h-0 op-5"></div>
                                     <div class="gradient-edge-bottom h-0"></div>
@@ -326,16 +336,8 @@
 
                             <!-- Slides -->
                             <div class="swiper-slide">
-                                <div class="swiper-inner" data-bgimage="url(images/slider/slider3.png)" style="margin-top: -10rem;">
-                                    <div class="gradient-edge-top h-0 op-5"></div>
-                                    <div class="gradient-edge-bottom h-0"></div>
-                                    <div class="sw-overlay op-6"></div>
-                                </div>
-                            </div>
-
-                            <!-- Slides -->
-                            <div class="swiper-slide">
-                                <div class="swiper-inner" data-bgimage="url(images/slider/slider2.png)">
+                                <div class="swiper-inner" data-bgimage="url(images/slider/slider6.png)"
+                                    style="margin-top: 0rem;">
                                     <div class="gradient-edge-top h-0 op-5"></div>
                                     <div class="gradient-edge-bottom h-0"></div>
                                     <div class="sw-overlay op-6"></div>
@@ -1147,8 +1149,8 @@
                             <div class="values-slide">
                                 <div class="values-card">
                                     <div class="values-card-img-wrap">
-                                        <img src="images/services/3.png" alt="People & Teamwork"
-                                            class="values-card-img" onerror="this.style.display='none'">
+                                        <img src="images/services/3.png" alt="People & Teamwork" class="values-card-img"
+                                            onerror="this.style.display='none'">
                                         <div class="values-card-icon">👥</div>
                                     </div>
                                     <div class="values-card-body bg-dark-2">
@@ -1722,8 +1724,8 @@
                     }
                 }
 
-                function startAuto() { autoTimer = setInterval(next, 4000); }
-                function resetAuto() { clearInterval(autoTimer); startAuto(); }
+                // function startAuto() { autoTimer = setInterval(next, 4000); }
+                // function resetAuto() { clearInterval(autoTimer); startAuto(); }
 
                 prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
                 nextBtn.addEventListener('click', () => { next(); resetAuto(); });
