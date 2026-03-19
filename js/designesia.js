@@ -1185,6 +1185,50 @@
     }
 
     /* --------------------------------------------------
+     * CAROUSEL SPEED FIX - Dynamic duration based on item count
+     * Maintains same scroll speed regardless of logo count
+     * --------------------------------------------------*/
+    function initCarouselSpeed() {
+        // Base speed: pixels per second (adjust to control speed)
+        // Lower = slower, Higher = faster
+        const BASE_SPEED = 50; // 80px per second
+        
+        document.querySelectorAll('.carousel-track').forEach(function(track) {
+            // Skip if track has no animation (like product04, product05)
+            if (track.closest('#product04, #product05')) {
+                track.style.animation = 'none';
+                return;
+            }
+            
+            const items = track.querySelectorAll('.logo-item');
+            const totalItems = items.length;
+            
+            if (totalItems === 0) return;
+            
+            // Calculate single set width (half of total since items are duplicated)
+            const halfItems = Math.floor(totalItems / 2);
+            let singleSetWidth = 0;
+            
+            // Calculate width of first half (original items, not duplicates)
+            for (let i = 0; i < halfItems && i < items.length; i++) {
+                const item = items[i];
+                const style = window.getComputedStyle(item);
+                const width = item.offsetWidth;
+                const marginLeft = parseInt(style.marginLeft) || 0;
+                const marginRight = parseInt(style.marginRight) || 0;
+                singleSetWidth += (width + marginLeft + marginRight);
+            }
+            
+            // Calculate duration: time = distance / speed
+            // Minimum 20s for very short carousels, no max
+            const duration = Math.max(20, singleSetWidth / BASE_SPEED);
+            
+            // Apply duration
+            track.style.animationDuration = duration + 's';
+        });
+    }
+
+    /* --------------------------------------------------
      * document ready
      * --------------------------------------------------*/
     $(function () {
@@ -1200,6 +1244,10 @@
         de_share();
         de_tabs();
         owlnavcenter();
+        
+        // Initialize carousel speed fix
+        initCarouselSpeed();
+        
         $(function () {
             $('.lazy').lazy();
         });
@@ -1675,6 +1723,8 @@
         $(window).resize(function () {
             init_resize();
             grid_gallery();
+            // Recalculate carousel speeds on resize
+            initCarouselSpeed();
         });
 
         /* --------------------------------------------------
@@ -1751,7 +1801,7 @@
             var pageHeight = $(document).height() - $(window).height();
             var progress = (100 * pixels) / pageHeight;
             $("div.scrollbar").css("width", progress + "%");
-            $("div.scrollbar-v").css("height", progress + "px");
+            $("div.scrollbar-v").css("height", progress + "%");
 
 
         });
