@@ -70,6 +70,289 @@
             color: #ffffff !important;
             letter-spacing: 0.5px !important;
         }
+
+        /* =============================================
+           ROADMAP ANIMATION STYLES (Integrated)
+           ============================================= */
+        :root {
+            --roadmap-scroll-height: auto;
+            --bg: #000;
+            --blue: #006bff;
+        }
+
+        .roadmap {
+            position: relative;
+            height: auto;
+            min-height: 100vh;
+            background: #0a0a0a;
+            /* Slightly lighter than pure black for depth */
+            padding-top: 50px;
+            /* Space for title */
+            padding-bottom: 50px;
+        }
+
+        .roadmap-sticky {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            height: 100dvh;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .scene {
+            position: relative;
+            width: 100%;
+            max-width: 100vw;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .roadmap-spacer {
+            height: 1800vh;
+            /* Controls scroll length */
+        }
+
+        .road-svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .road-shadow,
+        .road-border,
+        .road-asphalt,
+        .road-dashes {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .road-shadow {
+            stroke: rgba(255, 255, 255, 0.22);
+            stroke-width: 45;
+            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.25));
+        }
+
+        .road-border {
+            stroke: #d9d9d9;
+            stroke-width: 40;
+        }
+
+        .road-asphalt {
+            stroke: #202020;
+            stroke-width: 34;
+        }
+
+        .road-dashes {
+            stroke: rgba(255, 255, 255, 0.88);
+            stroke-width: 3.2;
+            stroke-dasharray: 13 14;
+        }
+
+        .motion-path {
+            fill: none;
+            stroke: transparent;
+            stroke-width: 1;
+            pointer-events: none;
+        }
+
+        .milestone-card {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            opacity: 0.6;
+            transition: opacity 0.3s ease, filter 0.3s ease;
+            pointer-events: none;
+        }
+
+        .milestone-card.active {
+            opacity: 1;
+            filter: drop-shadow(0 0 7px rgba(0, 107, 255, 0.45));
+        }
+
+        .ms-icon {
+            width: 68px;
+            height: 68px;
+            flex: 0 0 68px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ms-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .ms-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 0;
+        }
+
+        .ms-year {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 28px;
+            line-height: 1;
+            font-weight: 700;
+            color: var(--blue);
+            letter-spacing: 1px;
+        }
+
+        .ms-title {
+            margin-top: 2px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 22px;
+            line-height: 1.1;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .ms-text {
+            margin-top: 4px;
+            width: 250px;
+            font-size: 13px;
+            line-height: 1.2;
+            color: #bfbfbf;
+        }
+
+        .car {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            pointer-events: none;
+            transform-origin: 50% 50%;
+            will-change: left, top, transform;
+            filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.55));
+        }
+
+        .car img,
+        .car svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .car-img {
+            display: none;
+        }
+
+        @media (max-width: 449px) {
+            .road-shadow {
+                stroke-width: 35;
+            }
+
+            .road-border {
+                stroke-width: 30;
+            }
+
+            .road-asphalt {
+                stroke-width: 24;
+            }
+
+            .road-dashes {
+                stroke-width: 2;
+                stroke-dasharray: 8 9;
+            }
+
+            .milestone-card {
+                gap: 10px;
+            }
+
+            .ms-icon {
+                width: 44px;
+                height: 44px;
+                flex: 0 0 44px;
+            }
+
+            .ms-year {
+                font-size: 18px;
+                line-height: 1;
+            }
+
+            .ms-title {
+                font-size: 15px;
+                line-height: 1.1;
+                white-space: normal;
+            }
+
+            .ms-text {
+                width: 180px;
+                font-size: 11px;
+                line-height: 1.2;
+                margin-top: 2px;
+            }
+        }
+
+        @media (min-width: 450px) and (max-width: 849px) {
+            .road-shadow {
+                stroke-width: 43;
+            }
+
+            .road-border {
+                stroke-width: 38;
+            }
+
+            .road-asphalt {
+                stroke-width: 32;
+            }
+
+            .milestone-card {
+                gap: 14px;
+            }
+
+            .ms-icon {
+                width: 58px;
+                height: 58px;
+                flex-basis: 58px;
+            }
+
+            .ms-year {
+                font-size: 26px;
+            }
+
+            .ms-title {
+                font-size: 20px;
+            }
+
+            .ms-text {
+                width: 240px;
+                font-size: 12.5px;
+            }
+        }
+
+        @media (min-width: 850px) {
+            .ms-year {
+                font-size: 34px;
+            }
+
+            .ms-title {
+                font-size: 26px;
+            }
+
+            .ms-text {
+                font-size: 15px;
+                width: 280px;
+            }
+
+            .ms-icon {
+                width: 72px;
+                height: 72px;
+                flex-basis: 72px;
+            }
+        }
     </style>
 
 </head>
@@ -84,28 +367,6 @@
 
         <!-- header begin -->
         <header class="transparent">
-            <!-- <div id="topbar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="d-flex justify-content-between xs-hide">
-                                <div class="d-flex">
-                                    <div class="topbar-widget"><a href="#"><img src="images/svg-white/bell.svg" class=""
-                                                alt="">GetGet 50% Discount for AutoDetail New Member</a></div>
-
-                                </div>
-                                <div class="d-flex">
-                                    <div class="topbar-widget me-5"><a href="#"><img src="images/svg-white/phone.svg"
-                                                class="" alt="">Call us: +1 800 987 654</a></div>
-                                    <div class="topbar-widget"><a href="#"><img src="images/svg-white/envelope.svg"
-                                                class="" alt="">Message us: support@autodetail.com</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div> -->
 
             <div class="container">
                 <div class="row">
@@ -183,31 +444,6 @@
                 </div>
                 <div class="sw-overlay"></div>
             </section>
-
-            <!-- <section>
-                <div class="container">
-                    <div class="row gy-4 gx-5 align-items-center justify-content-center">
-                        <div class="col-md-8 col-lg-6">
-                            <div class="relative">
-                                <img src="images/misc/01.webp" class="relative z-2 mb-5 rounded-1 mb-4 w-60 soft-shadow"
-                                    alt="">
-                                <img src="images/misc/02.webp" class="abs end-0 mt-5 rounded-1 mb-4 w-60" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">About Us</div>
-                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Who We Are</h2>
-                            <p>Anura Group is a professionally managed business organization with a strong foundation in
-                                Sri Lankan entrepreneurship. Since our establishment, we have focused on building
-                                sustainable businesses through quality-driven operations, ethical governance, and
-                                customer-centric thinking.</p>
-
-                            <p>Our diversified portfolio reflects our ability to adapt, innovate, and scale while
-                                remaining firmly committed to local values and national development.</p>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
 
             <section class="relative overflow-hidden mt-0 mb-0">
                 <div class="container text-center">
@@ -336,93 +572,27 @@
                     <div class="col-12 fadeInRight">
                         <div class="bg-dark relative rounded-1 overflow-hidden"
                             style="box-shadow: rgba(155, 202, 243, 0.48) 6px 2px 16px 0px, rgba(30, 2, 192, 0.8) -6px -2px 16px 0px;">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <img src="images/team/3.webp" class="w-100" alt="" style="border-radius: 8px;">
-                                </div>
-                                <div class="col-md-7 mt-3 mt-md-0 mt-lg-0">
+                            <div class="row justify-content-center">
+                                <div class="col-md-7 mt-3 mt-md-0 mt-lg-0 text-center">
                                     <div class="p-3 align-items-center">
-                                        <h2 class="mb-0 fadeInRight">Mr.Lorem Ipsum</h2>
-                                        <h3 class="mb-2 text-muted fadeInRight" style="letter-spacing: 8px;">Lorem Ipsum
+                                        <h2 class="mb-0 fadeInRight">Team of Anura Group</h2>
+                                        <h3 class="mb-2 text-muted fadeInRight" style="letter-spacing: 8px;">Stronger
+                                            Together
                                         </h3>
                                         <br>
-                                        <p class="lh-1-4 wow fadeInRight"><b>A Foundation Built on Trust</b></p>
-                                        <p class="lh-1-4 wow fadeInRight">Lorem ipsum dolor sit amet consectetur
-                                            adipisicing elit. Ex illo excepturi totam maiores tempore corporis
-                                            exercitationem quam rerum doloremque nesciunt nemo mollitia similique
-                                            accusamus hic perspiciatis sit, nobis, nihil unde?</p>
-                                        <p class="lh-1-4 wow fadeInRight">Lorem, ipsum dolor sit amet consectetur
-                                            adipisicing elit. Repudiandae, amet? Illo delectus blanditiis quaerat aut,
-                                            iste perferendis et. Illo ratione iusto quas assumenda nulla, cum odio sed
-                                            quam libero id.</p>
-                                        <p class="lh-1-4 wow fadeInRight">- Lorem -</p>
-                                        <div class="social-icons fadeInRight">
-                                            <a href="#"><i
-                                                    class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
-                                            <a href="#"><i
-                                                    class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
-                                            <a href="#"><i
-                                                    class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
-                                        </div>
+                                        <p class="lh-1-4 wow fadeInRight">Behind every great achievement is a strong
+                                            team committed to quality, innovation and customer satisfaction.</p>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img src="images/team/Staff Image.png" class="w-100" alt=""
+                                        style="border-radius: 8px;">
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- <div class="col-sm-8 col-md-5">
-                            <div class="bg-dark relative rounded-1 overflow-hidden">
-                                <img src="images/team/Mr.Lahiru.webp" class="w-100" alt="">
-                                <div class="p-3 text-center">
-                                    <h4 class="mb-0">Mr.Lahiru Mewan Kottage</h4>
-                                    <p class="mb-2">Managing Director</p>
-                                    <div class="social-icons">
-                                        <a href="#"><i
-                                                class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
-                                        <a href="#"><i
-                                                class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
-                                        <a href="#"><i
-                                                class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-                    <!-- <div class="col-lg-3">
-                            <div class="bg-dark relative rounded-1 overflow-hidden">
-                                <img src="images/team/3.webp" class="w-100" alt="">
-                                <div class="p-3 text-center">
-                                    <h4 class="mb-0">Joshua Henry</h4>
-                                    <p class="mb-2">Paint Correction Expert</p>
-                                    <div class="social-icons">
-                                        <a href="#"><i
-                                                class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
-                                        <a href="#"><i
-                                                class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
-                                        <a href="#"><i
-                                                class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3">
-                            <div class="bg-dark relative rounded-1 overflow-hidden">
-                                <img src="images/team/4.webp" class="w-100" alt="">
-                                <div class="p-3 text-center">
-                                    <h4 class="mb-0">Jackson Reed</h4>
-                                    <p class="mb-2">Ceramic Coating Technician</p>
-                                    <div class="social-icons">
-                                        <a href="#"><i
-                                                class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
-                                        <a href="#"><i
-                                                class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
-                                        <a href="#"><i
-                                                class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                 </div>
             </section>
 
@@ -459,195 +629,74 @@
                 </div>
             </section>
 
-            <section class="bg-gradient-blue text-light">
+            <!-- =============================================
+                 OUR STORY (ROADMAP)
+                 ============================================= -->
+            <section class="roadmap" id="roadmap">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <h2 class="mb-5 wow fadeInUp text-center" data-wow-delay=".2s">Our Story</h2>
-
-                            <!-- Timeline Carousel Container -->
-                            <div class="timeline-carousel-wrapper">
-                                <!-- Navigation Buttons -->
-                                <button class="timeline-nav-btn timeline-prev" onclick="moveTimeline(-1)">
-                                    <i class="fa fa-chevron-left"></i>
-                                </button>
-
-                                <div class="timeline-carousel-container">
-                                    <!-- Timeline Line - Straight Horizontal -->
-                                    <div class="timeline-line"></div>
-
-                                    <div class="timeline-track" id="timelineTrack">
-                                        <!-- Timeline Items - Alternating top/bottom -->
-
-                                        <!-- 1978 - Top -->
-                                        <div class="timeline-item timeline-top">
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>ANURA DIESEL HOUSE WAS FOUNDED</p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-year">1977</div>
-                                        </div>
-
-                                        <!-- 1985 - Bottom -->
-                                        <div class="timeline-item timeline-bottom">
-                                            <div class="timeline-year">1982</div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>ANURA AUTO HOUSE 25, PANCHIKAWATTE ROAD, COLOMBO- 10</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- 1992 - Top -->
-                                        <div class="timeline-item timeline-top">
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>ANURA AUTO SPARES (PVT) LTD 203, PANCHIKAWATTE ROAD, COLOMBO-10
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-year">1987</div>
-                                        </div>
-
-                                        <!-- 1998 - Bottom -->
-                                        <div class="timeline-item timeline-bottom">
-                                            <div class="timeline-year">1990</div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>ANURA AUTO PARTS CENTRE (PVT) LTD 120, PANCHIKAWATTE ROAD,
-                                                        COLOMBO-10</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- 2002 - Top -->
-                                        <div class="timeline-item timeline-top">
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>ANURA TRADING HOUSE 09, JETHAWANA MAWATHA, COLOMBO-10</p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-year">1997</div>
-                                        </div>
-
-                                        <!-- 2005 - Bottom -->
-                                        <div class="timeline-item timeline-bottom">
-                                            <div class="timeline-year">2002</div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>ANURA TRADING HOUSE 57, JETHAWANA MAWATHA, COLOMBO-14</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- 2008 - Top -->
-                                        <div class="timeline-item timeline-top">
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>THE GROUP OF COMPANIES WAS FORMED</p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-year">2012</div>
-                                        </div>
-
-                                        <!-- 2010 - Bottom -->
-                                        <div class="timeline-item timeline-bottom">
-                                            <div class="timeline-year">2014</div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>ANURA HEAVY VEHICLE AND MACHINERY SPARES DIVISON 177,
-                                                        PANCHIKAWATTE ROAD, COLOMBO-10</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- 2012 - Top -->
-                                        <div class="timeline-item timeline-top">
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>ANURA GROUP OF COMPANIES TWO WHEELER & THREE WHEELER DIVISION</p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-year">2015</div>
-                                        </div>
-
-                                        <!-- 2015 - Bottom -->
-                                        <div class="timeline-item timeline-bottom">
-                                            <div class="timeline-year">2018</div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>ANURA GROUP OF COMPANIES 40 YEARS ANNIVERSARY</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- 2018 - Top -->
-                                        <div class="timeline-item timeline-top">
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>VICTORY LEAF SPRINGS UNDER CEYLON AUTO INDUSTRIES (PVT) LTD WAS
-                                                        ACQUIRED BY THE GROUP</p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-year">2020</div>
-                                        </div>
-
-                                        <!-- 2020 - Bottom -->
-                                        <div class="timeline-item timeline-bottom">
-                                            <div class="timeline-year">2024</div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>AUTOMOTIVE & INDUSTRIAL LUBRICANTS DIVISION WAS FORMED</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="timeline-item timeline-top">
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>Group was restructured in to LLC's</p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-year">2025</div>
-                                        </div>
-
-                                        <div class="timeline-item timeline-bottom">
-                                            <div class="timeline-year">2026</div>
-                                            <div class="timeline-dot"></div>
-                                            <div class="timeline-content">
-                                                <div class="timeline-card">
-                                                    <p>Adopted & Implemented SAP Business One</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <button class="timeline-nav-btn timeline-next" onclick="moveTimeline(1)">
-                                    <i class="fa fa-chevron-right"></i>
-                                </button>
-                            </div>
-
-                            <!-- Timeline Indicators -->
-                            <div class="timeline-indicators" id="timelineIndicators"></div>
+                        <div class="col-lg-12 text-center mb-5">
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Our Story</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".3s"
+                                style="color: #aaa; max-width: 700px; margin: 0 auto;">Scroll
+                                down to drive through our journey.</p>
                         </div>
                     </div>
                 </div>
+
+                <div class="roadmap-sticky">
+                    <div class="scene" id="roadScene">
+                        <svg class="road-svg" id="roadSvg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                            <g id="roadGroup">
+                                <path class="road-shadow" id="rShadow" />
+                                <path class="road-border" id="rBorder" />
+                                <path class="road-asphalt" id="rAsphalt" />
+                                <path class="road-dashes" id="rDashes" />
+                            </g>
+                            <g id="milestoneLayer"></g>
+                            <path id="motionPath" class="motion-path" />
+                        </svg>
+
+                        <div class="car" id="car">
+                            <img class="car-img" id="carImg" alt="Car" />
+                            <svg class="car-vector" id="carVector" viewBox="0 0 118 58"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="carBody" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#00b7ff" />
+                                        <stop offset="0.45" stop-color="#006eff" />
+                                        <stop offset="1" stop-color="#0039c9" />
+                                    </linearGradient>
+                                    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#79e6ff" />
+                                        <stop offset="1" stop-color="#00306f" />
+                                    </linearGradient>
+                                </defs>
+                                <ellipse cx="28" cy="7" rx="13" ry="5" fill="#080808" />
+                                <ellipse cx="28" cy="51" rx="13" ry="5" fill="#080808" />
+                                <ellipse cx="88" cy="7" rx="13" ry="5" fill="#080808" />
+                                <ellipse cx="88" cy="51" rx="13" ry="5" fill="#080808" />
+                                <path
+                                    d="M20 8 C13 12 10 21 10 29 C10 37 13 46 20 50 H89 C101 50 110 40 110 29 C110 18 101 8 89 8 H20Z"
+                                    fill="url(#carBody)" stroke="#29c6ff" stroke-width="2" />
+                                <path
+                                    d="M40 12 H75 C87 12 96 20 99 29 C96 38 87 46 75 46 H40 C48 39 51 34 51 29 C51 24 48 19 40 12Z"
+                                    fill="#0042b8" opacity="0.45" />
+                                <path d="M54 14 H75 C82 14 88 19 91 26 H56 C56 21 55 17 54 14Z" fill="url(#glass)"
+                                    opacity="0.95" />
+                                <path d="M56 32 H91 C88 39 82 44 75 44 H54 C55 41 56 37 56 32Z" fill="url(#glass)"
+                                    opacity="0.85" />
+                                <path d="M21 16 C16 20 14 24 14 29 C14 34 16 38 21 42" fill="none" stroke="#8feaff"
+                                    stroke-width="2" opacity="0.8" />
+                                <rect x="104" y="20" width="6" height="5" rx="2" fill="#fff58a" />
+                                <rect x="104" y="33" width="6" height="5" rx="2" fill="#fff58a" />
+                                <rect x="9" y="20" width="5" height="6" rx="2" fill="#ff263b" />
+                                <rect x="9" y="32" width="5" height="6" rx="2" fill="#ff263b" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap-spacer"></div>
             </section>
 
             <section class="bg-dark-2">
@@ -655,19 +704,6 @@
                     <div class="row g-4">
                         <div class="col-lg-12">
                             <h2 class="wow fadeInUp" data-wow-delay=".2s">Overview</h2>
-                            <!-- <p class="lh-1-4 wow fadeInUp">Anura Group is supported by a strong and well-established
-                                islandwide distribution network, strategically structured to ensure the timely
-                                availability of OEM and aftermarket spare parts across Sri Lanka. Our logistics and
-                                supply chain systems are designed for efficiency, enabling consistent product flow from
-                                international suppliers to local markets without disruption.</p>
-                            <p>Through long-standing partnerships with trusted dealers, retailers and service providers,
-                                we maintain a reliable presence across key regions of the country. This extensive
-                                network allows us to respond quickly to market demands, support workshops and fleet
-                                operators with dependable supply and ensure customers receive quality products when and
-                                where they need them.
-                                Backed by operational discipline and relationship-driven collaboration, our network
-                                stands as a cornerstone of Anura Group's commitment to reliability, accessibility, and
-                                customer confidence nationwide.</p> -->
                         </div>
                         <div class="col-lg-12">
                             <div class="col-lg-12" style="display: flex; justify-content: center; align-items: center;">
@@ -864,199 +900,241 @@
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
 
+    <!-- Roadmap Animation Script -->
     <script>
-        (function () {
-            'use strict';
+        (() => {
+            // Configuration
+            const CAR_IMAGE_SRC = ""; // Leave empty to use vector car
+            const CAR_WIDTH = 96;
+            const CAR_IMAGE_ANGLE_OFFSET = 0;
+            const RESPONSIVE_PAN_MAX = 1039;
+            const BASE_Y1 = 50;
+            const MOBILE_Y1 = 40;
+            const BASE_ROW_SPACING = 220;
+            const MOBILE_ROW_SPACING = 150;
+            const MILESTONE_COUNT = 14;
+            const ROW_COUNT = 14;
 
-            const track = document.getElementById('timelineTrack');
-            const dotsWrap = document.getElementById('timelineIndicators');
-            const container = document.querySelector('.timeline-carousel-container');
-            const prevBtn = document.querySelector('.timeline-prev');
-            const nextBtn = document.querySelector('.timeline-next');
-            const scrollHint = document.getElementById('timelineScrollHint');
+            // Milestone Data
+            const milestones = [
+                { year: "1977", title: "Foundation", text: "Anura Group established with a vision for quality auto parts." },
+                { year: "1982", title: "Expansion", text: "Expanded distribution network across Western Province." },
+                { year: "1987", title: "Partnership", text: "Secured partnerships with major Japanese manufacturers." },
+                { year: "1990", title: "New Facility", text: "Opened state-of-the-art warehouse in Colombo." },
+                { year: "1997", title: "Milestone", text: "Served over 10,000 satisfied customers nationwide." },
+                { year: "2002", title: "Digital Shift", text: "Launched digital inventory management system." },
+                { year: "2012", title: "Fleet Support", text: "Became primary supplier for major fleet operators." },
+                { year: "2014", title: "EV Ready", text: "Introduced hybrid and EV compatible parts range." },
+                { year: "2015", title: "Growth", text: "Expanded product portfolio to include lubricants & batteries." },
+                { year: "2018", title: "Leadership", text: "Recognized as market leader in aftermarket parts." },
+                { year: "2020", title: "Innovation", text: "Launching AI-powered parts prediction system." },
+                { year: "2024", title: "Sustainability", text: "Commitment to carbon neutral operations." },
+                { year: "2025", title: "Regional", text: "Expanding distribution to South Asian markets." },
+                { year: "2026", title: "Vision", text: "Becoming the most trusted automotive brand in region." }
+            ].map((m, i) => ({ ...m, progress: 0.03 + (i / (MILESTONE_COUNT - 1)) * 0.94 }));
 
-            if (!track || !container) return;
+            // DOM Elements
+            const section = document.getElementById("roadmap");
+            const scene = document.getElementById("roadScene");
+            const svg = document.getElementById("roadSvg");
+            const car = document.getElementById("car");
+            const carImg = document.getElementById("carImg");
+            const carVector = document.getElementById("carVector");
+            const milestoneLayer = document.getElementById("milestoneLayer");
+            const motionPath = document.getElementById("motionPath");
+            const rShadow = document.getElementById("rShadow");
+            const rBorder = document.getElementById("rBorder");
+            const rAsphalt = document.getElementById("rAsphalt");
+            const rDashes = document.getElementById("rDashes");
 
-            /* ── Collect original items ─────────────────────────── */
-            const origItems = Array.from(track.querySelectorAll('.timeline-item:not(.tl-clone)'));
-            const origCount = origItems.length;
+            let pathLength = 0;
+            let sceneW = window.innerWidth;
+            let sceneH = BASE_Y1 + BASE_ROW_SPACING * ROW_COUNT + 80;
+            let sceneScale = 1;
+            let currentProgress = 0;
+            let targetProgress = 0;
+            let rafId = 0;
+            const svgNS = "http://www.w3.org/2000/svg";
 
-            let perView = 4;
-            let current = 0;          /* logical index into origItems */
-            let isTransitioning = false;
-            let autoTimer;
-            let userInteracted = false;
+            function getYPositions(vw) {
+                const isMobile = vw < 450;
+                const rowSpacing = isMobile ? MOBILE_ROW_SPACING : BASE_ROW_SPACING;
+                const startY = isMobile ? MOBILE_Y1 : BASE_Y1;
+                const Ys = Array.from({ length: ROW_COUNT + 1 }, (_, i) => startY + rowSpacing * i);
+                return { startY, rowSpacing, Ys };
+            }
 
-            /* Hide scroll hint after first user interaction */
-            function hideScrollHint() {
-                if (!userInteracted && scrollHint) {
-                    userInteracted = true;
-                    scrollHint.classList.add('hidden');
+            function buildPaths(minX, maxX, vw, Ys) {
+                const ry = (Ys[1] - Ys[0]) / 2;
+                const curveMultiplier = vw < 450 ? 0.25 : 0.45;
+                const rxRight = Math.min(120, (maxX - minX) * curveMultiplier);
+                const rxLeft = Math.min(100, (maxX - minX) * curveMultiplier);
+                const rightJoinX = maxX - rxRight;
+                const leftJoinX = minX + rxLeft;
+                const isLargeScreen = vw >= 850;
+                const visualEntryX = isLargeScreen ? -200 : -100;
+                const visualExitX = isLargeScreen ? vw + 200 : vw + 100;
+                const motionEntryX = 50;
+                const motionExitX = vw - 50;
+
+                let visualArr = [`M ${visualEntryX} ${Ys[0]}`];
+                let motionArr = [`M ${motionEntryX} ${Ys[0]}`];
+
+                for (let i = 0; i < ROW_COUNT; i++) {
+                    const currY = Ys[i];
+                    const nextY = Ys[i + 1];
+                    const midY = (currY + nextY) / 2;
+                    if (i % 2 === 0) {
+                        visualArr.push(`H ${rightJoinX}`, `A ${rxRight} ${ry} 0 0 1 ${maxX} ${midY}`, `A ${rxRight} ${ry} 0 0 1 ${rightJoinX} ${nextY}`);
+                        motionArr.push(`H ${rightJoinX}`, `A ${rxRight} ${ry} 0 0 1 ${maxX} ${midY}`, `A ${rxRight} ${ry} 0 0 1 ${rightJoinX} ${nextY}`);
+                    } else {
+                        visualArr.push(`H ${leftJoinX}`, `A ${rxLeft} ${ry} 0 0 0 ${minX} ${midY}`, `A ${rxLeft} ${ry} 0 0 0 ${leftJoinX} ${nextY}`);
+                        motionArr.push(`H ${leftJoinX}`, `A ${rxLeft} ${ry} 0 0 0 ${minX} ${midY}`, `A ${rxLeft} ${ry} 0 0 0 ${leftJoinX} ${nextY}`);
+                    }
                 }
+                visualArr.push(`H ${visualExitX}`);
+                motionArr.push(`H ${motionExitX}`);
+                return { visual: visualArr.join(" "), motion: motionArr.join(" ") };
             }
 
-            function getPerView() {
-                const w = window.innerWidth;
-                if (w >= 1200) return 4;
-                if (w >= 768) return 3;
-                if (w >= 480) return 2;
-                return 1;
+            function escapeHtml(v) { return String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
+
+            function milestoneIcon() {
+                return `<svg class="ms-icon" viewBox="0 0 70 62" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M34 10c8 0 15 6 15 15 0 7-5 12-9 17l-6 7-6-7c-4-5-9-10-9-17 0-9 7-15 15-15Z"/><circle cx="34" cy="25" r="5"/><path d="M15 50c5-6 10-8 16-6 5 2 8 2 13-1 4-2 8-2 12 2"/><path d="M8 55h54"/></g></svg>`;
             }
 
-            /* ── Clone buffer ───────────────────────────────────── */
-            function setupClones() {
-                track.querySelectorAll('.tl-clone').forEach(el => el.remove());
+            function createMilestones() {
+                milestoneLayer.innerHTML = "";
+                milestones.forEach((item, index) => {
+                    const fo = document.createElementNS(svgNS, "foreignObject");
+                    fo.setAttribute("x", "180");
+                    fo.setAttribute("y", "120");
+                    fo.setAttribute("width", "360");
+                    fo.setAttribute("height", "100");
+                    fo.setAttribute("data-index", index);
+                    fo.innerHTML = `<div xmlns="http://www.w3.org/1999/xhtml" class="milestone-card">${milestoneIcon()}<div class="ms-content"><div class="ms-year">${escapeHtml(item.year)}</div><div class="ms-title">${escapeHtml(item.title)}</div><div class="ms-text">${escapeHtml(item.text)}</div></div></div>`;
+                    milestoneLayer.appendChild(fo);
+                });
+            }
 
-                /* Prepend: last perView originals */
-                for (let i = perView - 1; i >= 0; i--) {
-                    const src = origItems[(origCount - perView + i + origCount) % origCount];
-                    const clone = src.cloneNode(true);
-                    clone.classList.add('tl-clone');
-                    track.insertBefore(clone, track.firstChild);
+            function setupCarImage() {
+                if (CAR_IMAGE_SRC.trim()) { carImg.src = CAR_IMAGE_SRC; carImg.style.display = "block"; carVector.style.display = "none"; }
+                else { carImg.style.display = "none"; carVector.style.display = "block"; }
+            }
+
+            function viewportHeight() { return window.visualViewport?.height || window.innerHeight; }
+            function clamp(value, min, max) { return Math.min(Math.max(value, min), max); }
+
+            function syncResponsivePan(point) {
+                const vh = viewportHeight();
+                const scenePixelH = sceneH * sceneScale;
+
+                if (scenePixelH <= vh) {
+                    scene.style.transform = "";
+                    return;
                 }
 
-                /* Append: first perView originals */
-                for (let i = 0; i < perView; i++) {
-                    const clone = origItems[i % origCount].cloneNode(true);
-                    clone.classList.add('tl-clone');
-                    track.appendChild(clone);
-                }
+                const carY = point.y * sceneScale;
+
+                // Car එක screen එකේ middle area එකේ තියාගෙන road එක vertical pan කරයි
+                const desiredTop = clamp(vh * 0.45 - carY, vh - scenePixelH, 0);
+
+                scene.style.transform = `translateY(${desiredTop}px)`;
             }
 
-            function itemWidthPx() {
-                const firstItem = track.querySelector('.timeline-item');
-                return firstItem ? firstItem.offsetWidth : 200;
+            function placeCar(progress, startY, rowSpacing) {
+                if (!pathLength) return;
+                const clampedProgress = clamp(progress, 0, 1);
+                const length = pathLength * clampedProgress;
+                const point = motionPath.getPointAtLength(length);
+                const next = motionPath.getPointAtLength(Math.min(pathLength, length + 3));
+                const angle = Math.atan2(next.y - point.y, next.x - point.x) * (180 / Math.PI) + CAR_IMAGE_ANGLE_OFFSET;
+                const screenX = point.x * sceneScale;
+                const screenY = point.y * sceneScale;
+                car.style.left = `${screenX}px`;
+                car.style.top = `${screenY}px`;
+                car.style.transform = `translate(-50%,-50%) rotate(${angle}deg)`;
+                const isMobile = window.innerWidth < 450;
+                const foHeight = isMobile ? 90 : 100;
+                document.querySelectorAll(".milestone-card").forEach((card, i) => {
+                    card.classList.toggle("active", progress >= milestones[i].progress);
+                    const fo = milestoneLayer.querySelector(`[data-index="${i}"]`);
+                    if (fo) {
+                        const currentRoadY = startY + rowSpacing * i;
+                        const exactMidpointY = currentRoadY + (rowSpacing / 2);
+                        const targetY = exactMidpointY - (foHeight / 2);
+                        fo.setAttribute("y", String(targetY));
+                    }
+                });
+                syncResponsivePan(point);
             }
 
-            function setTransform(idx, animate) {
-                const totalIdx = perView + idx;          /* perView prepended clones offset */
-                const px = totalIdx * itemWidthPx();
-                track.style.transition = animate
-                    ? 'transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                    : 'none';
-                track.style.transform = 'translateX(-' + px + 'px)';
+            function recalc() {
+                const vw = window.innerWidth;
+                const isMobile = vw < 450;
+                const isLargeScreen = vw >= 850;
+                const { startY, rowSpacing, Ys } = getYPositions(vw);
+                sceneW = vw;
+                sceneH = Ys[ROW_COUNT] + 80;
+                svg.setAttribute("viewBox", `0 0 ${sceneW} ${sceneH}`);
+                const maxZigzagWidth = isLargeScreen ? 900 : 600;
+                const padding = isLargeScreen ? 40 : 25;
+                const zigzagWidth = Math.min(maxZigzagWidth, vw);
+                const minX = (vw - zigzagWidth) / 2 + padding;
+                const maxX = vw - (vw - zigzagWidth) / 2 - padding;
+                const foWidth = isMobile ? 260 : 380;
+                const foHeight = isMobile ? 90 : 100;
+                const msCenterX = Math.max(0, (vw - foWidth) / 2);
+                const screenMargin = isMobile ? 12 : 30;
+                const maxAvailableShift = Math.max(0, msCenterX - screenMargin);
+                const shiftAmount = isMobile ? Math.min(25, maxAvailableShift) : Math.min(85, maxAvailableShift);
+                milestones.forEach((_, index) => {
+                    const fo = milestoneLayer.querySelector(`[data-index="${index}"]`);
+                    if (fo) {
+                        const isOddMilestoneNumber = (index % 2 === 0);
+                        const targetX = isOddMilestoneNumber ? (msCenterX - shiftAmount) : (msCenterX + shiftAmount);
+                        fo.setAttribute("x", String(targetX));
+                        fo.setAttribute("width", String(foWidth));
+                        fo.setAttribute("height", String(foHeight));
+                    }
+                });
+                const paths = buildPaths(minX, maxX, vw, Ys);
+                rShadow.setAttribute("d", paths.visual);
+                rBorder.setAttribute("d", paths.visual);
+                rAsphalt.setAttribute("d", paths.visual);
+                rDashes.setAttribute("d", paths.visual);
+                motionPath.setAttribute("d", paths.motion);
+                const rect = scene.getBoundingClientRect();
+                sceneScale = rect.width / sceneW;
+                car.style.width = `${CAR_WIDTH * sceneScale}px`;
+                pathLength = motionPath.getTotalLength();
+                placeCar(currentProgress, startY, rowSpacing);
             }
 
-            /* ── Dots ───────────────────────────────────────────── */
-            function totalDots() { return Math.ceil(origCount / perView); }
-
-            function activeDotIdx() {
-                const norm = ((current % origCount) + origCount) % origCount;
-                return Math.floor(norm / perView);
+            function getScrollProgress() {
+                const rect = section.getBoundingClientRect();
+                const scrollable = Math.max(section.scrollHeight - viewportHeight(), 0);
+                const scrolled = Math.min(Math.max(-rect.top, 0), scrollable);
+                return scrollable <= 0 ? 0 : scrolled / scrollable;
             }
 
-            function buildDots() {
-                dotsWrap.innerHTML = '';
-                const n = totalDots();
-                for (let i = 0; i < n; i++) {
-                    const btn = document.createElement('button');
-                    btn.className = 'timeline-indicator-dot';
-                    btn.setAttribute('aria-label', 'Page ' + (i + 1));
-                    btn.addEventListener('click', () => { goTo(i * perView); resetAuto(); hideScrollHint(); });
-                    dotsWrap.appendChild(btn);
-                }
-                updateDots();
+            function animate() {
+                targetProgress = getScrollProgress();
+                currentProgress += (targetProgress - currentProgress) * 0.05;
+                if (Math.abs(targetProgress - currentProgress) < 0.0005) currentProgress = targetProgress;
+                const { startY, rowSpacing } = getYPositions(window.innerWidth);
+                placeCar(currentProgress, startY, rowSpacing);
+                rafId = requestAnimationFrame(animate);
             }
 
-            function updateDots() {
-                const active = activeDotIdx();
-                dotsWrap.querySelectorAll('.timeline-indicator-dot')
-                    .forEach((d, i) => d.classList.toggle('active', i === active));
-            }
-
-            /* ── Movement ───────────────────────────────────────── */
-            function goTo(idx, animate = true) {
-                current = idx;
-                setTransform(current, animate);
-                updateDots();
-                if (animate) {
-                    isTransitioning = true;
-                    setTimeout(() => { isTransitioning = false; }, 700);
-                }
-            }
-
-            function next() {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                current++;
-                setTransform(current, true);
-                updateDots();
-
-                if (current >= origCount) {
-                    setTimeout(() => {
-                        current = current % origCount;
-                        setTransform(current, false);
-                        updateDots();
-                        isTransitioning = false;
-                    }, 660);
-                } else {
-                    setTimeout(() => { isTransitioning = false; }, 700);
-                }
-            }
-
-            function prev() {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                current--;
-                setTransform(current, true);
-                updateDots();
-
-                if (current < 0) {
-                    setTimeout(() => {
-                        current = origCount + current;
-                        setTransform(current, false);
-                        updateDots();
-                        isTransitioning = false;
-                    }, 660);
-                } else {
-                    setTimeout(() => { isTransitioning = false; }, 700);
-                }
-            }
-
-            /* Expose globally so onclick="moveTimeline()" still works */
-            window.moveTimeline = function (dir) {
-                hideScrollHint();
-                if (dir > 0) { next(); resetAuto(); }
-                else { prev(); resetAuto(); }
-            };
-
-            /* ── Auto-play ──────────────────────────────────────── */
-            function startAuto() { autoTimer = setInterval(next, 4000); }
-            function resetAuto() { clearInterval(autoTimer); startAuto(); }
-
-            /* ── Touch / Swipe ──────────────────────────────────── */
-            let touchX = 0;
-            track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
-            track.addEventListener('touchend', e => {
-                const diff = touchX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); hideScrollHint(); }
-            });
-
-            /* ── Init ───────────────────────────────────────────── */
-            function init() {
-                perView = getPerView();
-                current = 0;
-                setupClones();
-                /* Force reflow so offsetWidth is correct after DOM change */
-                track.style.transition = 'none';
-                void track.offsetWidth;
-                setTransform(current, false);
-                buildDots();
-            }
-
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(init, 200);
-            });
-
-            /* Run after full page load so images/fonts don't shift widths */
-            if (document.readyState === 'complete') {
-                init(); startAuto();
-            } else {
-                window.addEventListener('load', () => { init(); startAuto(); });
-            }
-
+            // Init
+            createMilestones();
+            setupCarImage();
+            recalc();
+            animate();
+            window.addEventListener("resize", recalc);
+            window.addEventListener("load", recalc);
+            window.visualViewport?.addEventListener("resize", recalc);
         })();
     </script>
 

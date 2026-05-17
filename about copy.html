@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Anura Group</title>
+    <link rel="icon" href="images/Anura-Logo-tab.png" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="AutoDetail - Car Detailing, Shop & Repair HTML Template" name="description">
+    <meta content="" name="keywords">
+    <meta content="" name="author">
+    <!-- CSS Files
+    ================================================== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css">
+
+    <style>
+        /* =============================================
+           TIMELINE HOVER ANIMATIONS
+           Matching products page .logo-item hover style
+           ============================================= */
+
+        .timeline-card {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            cursor: pointer;
+            user-select: none;
+            border: 2px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-10px) scale(1.05) !important;
+            background: rgba(40, 43, 230, 0.15) !important;
+            border: 2px solid rgba(40, 69, 230, 0.8) !important;
+            box-shadow: 0 15px 40px rgba(43, 40, 230, 0.35), 0 0 0 1px rgba(40, 69, 230, 0.3) !important;
+        }
+
+        .timeline-dot {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.4) !important;
+            box-shadow: 0 0 20px rgba(40, 69, 230, 0.9), 0 0 40px rgba(40, 69, 230, 0.5) !important;
+            background: #2845e6 !important;
+        }
+
+        .timeline-year {
+            transition: color 0.4s ease, text-shadow 0.4s ease !important;
+        }
+
+        .timeline-item:hover .timeline-year {
+            color: #ffffff !important;
+            text-shadow: 0 0 20px rgba(60, 120, 255, 0.9) !important;
+        }
+
+        .timeline-card p {
+            transition: color 0.3s ease, letter-spacing 0.3s ease !important;
+        }
+
+        .timeline-card:hover p {
+            color: #ffffff !important;
+            letter-spacing: 0.5px !important;
+        }
+    </style>
+
+</head>
+
+<body class="dark-scheme">
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+
+        <!-- preloader begin -->
+        <div id="de-loader"></div>
+        <!-- preloader end -->
+
+        <!-- header begin -->
+        <header class="transparent">
+            <!-- <div id="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="d-flex justify-content-between xs-hide">
+                                <div class="d-flex">
+                                    <div class="topbar-widget"><a href="#"><img src="images/svg-white/bell.svg" class=""
+                                                alt="">GetGet 50% Discount for AutoDetail New Member</a></div>
+
+                                </div>
+                                <div class="d-flex">
+                                    <div class="topbar-widget me-5"><a href="#"><img src="images/svg-white/phone.svg"
+                                                class="" alt="">Call us: +1 800 987 654</a></div>
+                                    <div class="topbar-widget"><a href="#"><img src="images/svg-white/envelope.svg"
+                                                class="" alt="">Message us: support@autodetail.com</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div> -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="index.html">
+                                        <img class="logo-main" src="images/Anura-Logo-03.png" alt="">
+                                        <img class="logo-mobile" src="images/Anura-Logo-03.png" alt="">
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainemenu begin -->
+                                <ul id="mainmenu">
+                                    <li><a class="menu-item" href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+
+
+                                    <li><a class="menu-item" href="products.html">Our Products</a>
+
+                                    </li>
+
+
+                                    <li><a href="contact.html">Contact</a></li>
+
+                                </ul>
+                                <!-- mainmenu end -->
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="tel:+94112449900" class="btn-main fx-slide hover-white">
+                                        <span><i class="icofont-phone me-1"></i>+94 112 478 134 / 5</span>
+                                        <!-- <br> -->
+                                        <!-- <span>Contact Now</span> -->
+                                    </a>
+                                    <span id="menu-btn"></span>
+                                </div>
+
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+
+            <div id="top"></div>
+
+            <section class="bg-dark text-light relative jarallax">
+                <div class="de-gradient-edge-top"></div>
+                <img src="images/background/11.png" class="jarallax-img" alt="">
+                <div class="container relative z-2">
+                    <div class="row gy-4 gx-5 justify-content-center">
+                        <div class="col-lg-12 text-center">
+                            <div class="spacer-double sm-hide"></div>
+                            <h1 class="mb-3 wow fadeInUp" data-wow-delay=".2s">About Us</h1>
+                            <div class="border-bottom mb-3"></div>
+                            <ul class="crumb wow fadeInUp">
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active">About Us</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="sw-overlay"></div>
+            </section>
+
+            <!-- <section>
+                <div class="container">
+                    <div class="row gy-4 gx-5 align-items-center justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="relative">
+                                <img src="images/misc/01.webp" class="relative z-2 mb-5 rounded-1 mb-4 w-60 soft-shadow"
+                                    alt="">
+                                <img src="images/misc/02.webp" class="abs end-0 mt-5 rounded-1 mb-4 w-60" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">About Us</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Who We Are</h2>
+                            <p>Anura Group is a professionally managed business organization with a strong foundation in
+                                Sri Lankan entrepreneurship. Since our establishment, we have focused on building
+                                sustainable businesses through quality-driven operations, ethical governance, and
+                                customer-centric thinking.</p>
+
+                            <p>Our diversified portfolio reflects our ability to adapt, innovate, and scale while
+                                remaining firmly committed to local values and national development.</p>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <section class="relative overflow-hidden mt-0 mb-0">
+                <div class="container text-center">
+                    <div class="row g-4 gx-5">
+                        <div class="col-lg-12">
+                            <h3 class="mb-4 wow fadeInRight">Our Vision</h3>
+                            <p class="fs-18 fw-600 lh-1-4 wow fadeInUp">
+                                To become the most trusted brand in the automotive after-market area, that best
+                                understands and satisfies customer needs. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative overflow-hidden mision--div">
+                <div class="container text-center">
+                    <div class="row g-4 gx-5">
+                        <div class="col-lg-12">
+                            <h3 class="mb-4 wow fadeInRight">Our Mission</h3>
+                            <p class="fs-18 fw-600 lh-1-4 wow fadeInUp">
+                                We are dedicated to delivering high-quality products and solutions that exceed customer
+                                expectations. Our mission is ingrained in our workforce, driving us to achieve
+                                operational excellence through continuous improvement. Timely and accurate customer
+                                service is a top priority.
+                            </p>
+                            <p class="fs-18 fw-600 lh-1-4 wow fadeInUp">
+                                Empowering our employees fosters a culture of growth and contribution, while our
+                                management is committed to competence and ethical actions. We value our employees,
+                                ensuring a secure and inclusive work environment that encourages open communication.
+                            </p>
+                            <p class="fs-18 fw-600 lh-1-4 wow fadeInUp">
+                                We uphold equal opportunities for employment and career advancement. Research,
+                                innovation, and accountability drive our progress, reflected in investments in new
+                                equipment, facilities, and product launches. Adherence to company policies and
+                                procedures guides performance improvement.
+                            </p>
+                            <p class="fs-18 fw-600 lh-1-4 wow fadeInUp">
+                                Our responsibility extends to all stakeholders, and we aim for sustainable
+                                profitability. United with one vision and goal, we move forward as a cohesive unit,
+                                advancing from strength to strength.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-dark-2 ">
+                <div class="container">
+                    <div class="col-12 fadeInRight">
+                        <div class="bg-dark relative rounded-1 overflow-hidden"
+                            style="box-shadow: rgba(155, 202, 243, 0.48) 6px 2px 16px 0px, rgba(30, 2, 192, 0.8) -6px -2px 16px 0px;">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <img src="images/team/Mr.Anura.png" class="w-100" alt=""
+                                        style="border-radius: 8px;">
+                                </div>
+                                <div class="col-md-7 mt-3 mt-md-0 mt-lg-0">
+                                    <div class="p-3 align-items-center">
+                                        <h2 class="mb-0 fadeInRight">Mr.Anura Sarath Kumara</h2>
+                                        <h3 class="mb-2 text-muted fadeInRight" style="letter-spacing: 8px;">Founder and
+                                            Chairman</h3>
+                                        <br>
+                                        <p class="lh-1-4 wow fadeInRight"><b>A Foundation Built on Trust</b></p>
+                                        <p class="lh-1-4 wow fadeInRight">Anura Group was established with the belief
+                                            that strong values create strong businesses. From the beginning, our focus
+                                            has been on quality, integrity, and perseverance—principles that continue to
+                                            guide the group today.</p>
+                                        <p class="lh-1-4 wow fadeInRight">As the organization evolves, this foundation
+                                            remains unchanged, shaping our growth and reinforcing our responsibility to
+                                            contribute positively to Sri Lanka's business landscape.</p>
+                                        <p class="lh-1-4 wow fadeInRight">- Founder -</p>
+                                        <div class="social-icons fadeInRight">
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="col-12 fadeInLeft">
+                        <div class="bg-dark relative rounded-1 overflow-hidden"
+                            style="box-shadow: rgba(155, 202, 243, 0.48) 6px 2px 16px 0px, rgba(30, 2, 192, 0.8) -6px -2px 16px 0px;">
+                            <div class="row managing--director">
+                                <div class="col-md-7">
+                                    <div class="p-3 align-items-center">
+                                        <h2 class="mb-0 fadeInLeft">Mr.Lahiru Mewan Kottage</h2>
+                                        <h3 class="mb-2 text-muted fadeInLeft" style="letter-spacing: 8px;">Managing
+                                            Director</h3>
+                                        <br>
+                                        <p class="lh-1-4 wow fadeInLeft"><b>Leading with Responsibility</b></p>
+                                        <p class="lh-1-4 wow fadeInLeft">At Anura Group, our leadership philosophy is
+                                            grounded in discipline, trust, and long-term vision. We believe sustainable
+                                            success is achieved by balancing performance with responsibility—towards our
+                                            customers, employees, and the nation.</p>
+                                        <p class="lh-1-4 wow fadeInLeft">I am proud of our team's commitment and
+                                            grateful for the confidence placed in us by our partners. As we move
+                                            forward, we remain focused on strengthening our capabilities, embracing
+                                            innovation, and delivering consistent value.</p>
+                                        <p class="lh-1-4 wow fadeInLeft">- Managing Director -</p>
+                                        <div class="social-icons fadeInLeft">
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 mt-3 mt-md-0 mt-lg-0">
+                                    <img src="images/team/Mr.Lahiru.webp" class="w-100" alt=""
+                                        style="border-radius: 8px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="col-12 fadeInRight">
+                        <div class="bg-dark relative rounded-1 overflow-hidden"
+                            style="box-shadow: rgba(155, 202, 243, 0.48) 6px 2px 16px 0px, rgba(30, 2, 192, 0.8) -6px -2px 16px 0px;">
+                            <div class="row justify-content-center">
+                                <div class="col-md-7 mt-3 mt-md-0 mt-lg-0 text-center">
+                                    <div class="p-3 align-items-center">
+                                        <h2 class="mb-0 fadeInRight">Team of Anura Group</h2>
+                                        <h3 class="mb-2 text-muted fadeInRight" style="letter-spacing: 8px;">Stronger
+                                            Together
+                                        </h3>
+                                        <br>
+                                        <!-- <p class="lh-1-4 wow fadeInRight"><b>A Foundation Built on Trust</b></p> -->
+                                        <p class="lh-1-4 wow fadeInRight">Behind every great achievement is a strong
+                                            team committed to quality, innovation and customer satisfaction.</p>
+                                        <!-- <p class="lh-1-4 wow fadeInRight">Lorem, ipsum dolor sit amet consectetur
+                                            adipisicing elit. Repudiandae, amet? Illo delectus blanditiis quaerat aut,
+                                            iste perferendis et. Illo ratione iusto quas assumenda nulla, cum odio sed
+                                            quam libero id.</p>
+                                        <p class="lh-1-4 wow fadeInRight">- Lorem -</p>
+                                        <div class="social-icons fadeInRight">
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
+                                            <a href="#"><i
+                                                    class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img src="images/team/Staff Image.png" class="w-100" alt=""
+                                        style="border-radius: 8px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-sm-8 col-md-5">
+                            <div class="bg-dark relative rounded-1 overflow-hidden">
+                                <img src="images/team/Mr.Lahiru.webp" class="w-100" alt="">
+                                <div class="p-3 text-center">
+                                    <h4 class="mb-0">Mr.Lahiru Mewan Kottage</h4>
+                                    <p class="mb-2">Managing Director</p>
+                                    <div class="social-icons">
+                                        <a href="#"><i
+                                                class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
+                                        <a href="#"><i
+                                                class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
+                                        <a href="#"><i
+                                                class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                <!-- <div class="col-lg-3">
+                            <div class="bg-dark relative rounded-1 overflow-hidden">
+                                <img src="images/team/3.webp" class="w-100" alt="">
+                                <div class="p-3 text-center">
+                                    <h4 class="mb-0">Joshua Henry</h4>
+                                    <p class="mb-2">Paint Correction Expert</p>
+                                    <div class="social-icons">
+                                        <a href="#"><i
+                                                class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
+                                        <a href="#"><i
+                                                class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
+                                        <a href="#"><i
+                                                class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="bg-dark relative rounded-1 overflow-hidden">
+                                <img src="images/team/4.webp" class="w-100" alt="">
+                                <div class="p-3 text-center">
+                                    <h4 class="mb-0">Jackson Reed</h4>
+                                    <p class="mb-2">Ceramic Coating Technician</p>
+                                    <div class="social-icons">
+                                        <a href="#"><i
+                                                class="bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
+                                        <a href="#"><i
+                                                class="bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
+                                        <a href="#"><i
+                                                class="bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+        </div>
+        </section>
+
+
+
+        <section class="bg-dark-2">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Our Network</h2>
+                        <p class="lh-1-4 wow fadeInUp">Anura Group is supported by a strong and well-established
+                            islandwide distribution network, strategically structured to ensure the timely
+                            availability of OEM and aftermarket spare parts across Sri Lanka. Our logistics and
+                            supply chain systems are designed for efficiency, enabling consistent product flow from
+                            international suppliers to local markets without disruption.</p>
+                        <p>Through long-standing partnerships with trusted dealers, retailers and service providers,
+                            we maintain a reliable presence across key regions of the country. This extensive
+                            network allows us to respond quickly to market demands, support workshops and fleet
+                            operators with dependable supply and ensure customers receive quality products when and
+                            where they need them.
+                            Backed by operational discipline and relationship-driven collaboration, our network
+                            stands as a cornerstone of Anura Group's commitment to reliability, accessibility, and
+                            customer confidence nationwide.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="col-lg-12" style="display: flex; justify-content: center; align-items: center;">
+                            <img src="images/locations/network.png" height="500">
+                            <!-- <iframe
+                                src="https://www.google.com/maps/d/embed?mid=1yiqg4q993h65ZbW_lSxrzd1jfbVlv8o&ehbc=2E312F"
+                                width="100%" height="480"></iframe> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-blue text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="mb-5 wow fadeInUp text-center" data-wow-delay=".2s">Our Story</h2>
+
+                        <!-- Timeline Carousel Container -->
+                        <div class="timeline-carousel-wrapper">
+                            <!-- Navigation Buttons -->
+                            <button class="timeline-nav-btn timeline-prev" onclick="moveTimeline(-1)">
+                                <i class="fa fa-chevron-left"></i>
+                            </button>
+
+                            <div class="timeline-carousel-container">
+                                <!-- Timeline Line - Straight Horizontal -->
+                                <div class="timeline-line"></div>
+
+                                <div class="timeline-track" id="timelineTrack">
+                                    <!-- Timeline Items - Alternating top/bottom -->
+
+                                    <!-- 1978 - Top -->
+                                    <div class="timeline-item timeline-top">
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>ANURA DIESEL HOUSE WAS FOUNDED</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-year">1977</div>
+                                    </div>
+
+                                    <!-- 1985 - Bottom -->
+                                    <div class="timeline-item timeline-bottom">
+                                        <div class="timeline-year">1982</div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>ANURA AUTO HOUSE 25, PANCHIKAWATTE ROAD, COLOMBO- 10</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 1992 - Top -->
+                                    <div class="timeline-item timeline-top">
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>ANURA AUTO SPARES (PVT) LTD 203, PANCHIKAWATTE ROAD, COLOMBO-10
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-year">1987</div>
+                                    </div>
+
+                                    <!-- 1998 - Bottom -->
+                                    <div class="timeline-item timeline-bottom">
+                                        <div class="timeline-year">1990</div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>ANURA AUTO PARTS CENTRE (PVT) LTD 120, PANCHIKAWATTE ROAD,
+                                                    COLOMBO-10</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2002 - Top -->
+                                    <div class="timeline-item timeline-top">
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>ANURA TRADING HOUSE 09, JETHAWANA MAWATHA, COLOMBO-10</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-year">1997</div>
+                                    </div>
+
+                                    <!-- 2005 - Bottom -->
+                                    <div class="timeline-item timeline-bottom">
+                                        <div class="timeline-year">2002</div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>ANURA TRADING HOUSE 57, JETHAWANA MAWATHA, COLOMBO-14</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2008 - Top -->
+                                    <div class="timeline-item timeline-top">
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>THE GROUP OF COMPANIES WAS FORMED</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-year">2012</div>
+                                    </div>
+
+                                    <!-- 2010 - Bottom -->
+                                    <div class="timeline-item timeline-bottom">
+                                        <div class="timeline-year">2014</div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>ANURA HEAVY VEHICLE AND MACHINERY SPARES DIVISON 177,
+                                                    PANCHIKAWATTE ROAD, COLOMBO-10</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2012 - Top -->
+                                    <div class="timeline-item timeline-top">
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>ANURA GROUP OF COMPANIES TWO WHEELER & THREE WHEELER DIVISION</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-year">2015</div>
+                                    </div>
+
+                                    <!-- 2015 - Bottom -->
+                                    <div class="timeline-item timeline-bottom">
+                                        <div class="timeline-year">2018</div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>ANURA GROUP OF COMPANIES 40 YEARS ANNIVERSARY</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2018 - Top -->
+                                    <div class="timeline-item timeline-top">
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>VICTORY LEAF SPRINGS UNDER CEYLON AUTO INDUSTRIES (PVT) LTD WAS
+                                                    ACQUIRED BY THE GROUP</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-year">2020</div>
+                                    </div>
+
+                                    <!-- 2020 - Bottom -->
+                                    <div class="timeline-item timeline-bottom">
+                                        <div class="timeline-year">2024</div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>AUTOMOTIVE & INDUSTRIAL LUBRICANTS DIVISION WAS FORMED</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item timeline-top">
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>Group was restructured in to LLC's</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-year">2025</div>
+                                    </div>
+
+                                    <div class="timeline-item timeline-bottom">
+                                        <div class="timeline-year">2026</div>
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-card">
+                                                <p>Adopted & Implemented SAP Business One</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <button class="timeline-nav-btn timeline-next" onclick="moveTimeline(1)">
+                                <i class="fa fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Timeline Indicators -->
+                        <div class="timeline-indicators" id="timelineIndicators"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-dark-2">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-12">
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Overview</h2>
+                        <!-- <p class="lh-1-4 wow fadeInUp">Anura Group is supported by a strong and well-established
+                                islandwide distribution network, strategically structured to ensure the timely
+                                availability of OEM and aftermarket spare parts across Sri Lanka. Our logistics and
+                                supply chain systems are designed for efficiency, enabling consistent product flow from
+                                international suppliers to local markets without disruption.</p>
+                            <p>Through long-standing partnerships with trusted dealers, retailers and service providers,
+                                we maintain a reliable presence across key regions of the country. This extensive
+                                network allows us to respond quickly to market demands, support workshops and fleet
+                                operators with dependable supply and ensure customers receive quality products when and
+                                where they need them.
+                                Backed by operational discipline and relationship-driven collaboration, our network
+                                stands as a cornerstone of Anura Group's commitment to reliability, accessibility, and
+                                customer confidence nationwide.</p> -->
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="col-lg-12" style="display: flex; justify-content: center; align-items: center;">
+                            <video width="auto" height="auto" controls>
+                                <source src="images/testimonial/corporate-video.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-12">
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Testimonials</h2>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <video width="100%" controls>
+                                    <source src="images/testimonial/tesimonial-video-1.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                <video width="100%" controls>
+                                    <source src="images/testimonial/tesimonial-video-2.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <!-- content end -->
+
+    <!-- footer begin -->
+    <footer>
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-sm-6">
+                    <img src="images/Anura-Logo-03.png" class="logo-footer" alt="">
+                    <div class="spacer-20"></div>
+                    <p>Anura Group is a professionally managed business organization with a strong foundation in Sri
+                        Lankan
+                        entrepreneurship. Since our establishment, we have focused on building sustainable
+                        businesses through
+                        quality-driven operations, ethical governance, and customer-centric thinking.</p>
+
+                    <div class="social-icons mb-sm-30">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="widget">
+                                <h5>Company</h5>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="products.html">Our Products</a></li>
+                                    <!-- <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="blog.html">Blog</a></li> -->
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="widget">
+                                <h5>Our Products</h5>
+                                <ul>
+                                    <li><a href="products.html">Japanese Vehicle Parts</a></li>
+                                    <li><a href="products.html">Indian Vehicle Parts</a></li>
+                                    <li><a href="products.html">Battery</a></li>
+                                    <li><a href="products.html">Lubricant</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                    <div class="widget">
+                        <h5>Contact Us</h5>
+
+                        <div class="fw-bold text-white">
+                            <i class="icofont-location-pin me-2 id-color"></i>Head Office
+                        </div>
+                        No. 57, Jethawana Road, Colombo 14.
+
+                        <div class="spacer-20"></div>
+
+                        <div class="fw-bold text-white">
+                            <i class="icofont-phone me-2 id-color"></i>Call Us
+                        </div>
+                        011 2478134/5 / 011 2449900 /011 2459415
+
+                        <div class="spacer-20"></div>
+
+                        <div class="fw-bold text-white">
+                            <i class="icofont-envelope me-2 id-color"></i>Email Us
+                        </div>
+                        info@anuragroup.lk
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                    &copy; 2026 - AutoDetail by Designesia
+                                </div>
+                                <ul class="menu-simple">
+                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+    </footer>
+
+    <!-- footer end -->
+    </div>
+
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="images/Anura-Logo-03.png" class="w-150px" alt="">
+
+            <!-- <div class="spacer-30-line"></div> -->
+
+            <!-- <h5>Our Services</h5>
+            <ul class="ul-check">
+                <li><a href="service-single.html">Exterior Hand Wash & Wax</a></li>
+                <li><a href="service-single.html">Interior Deep Cleaning</a></li>
+                <li><a href="service-single.html">Paint Correction</a></li>
+                <li><a href="service-single.html">Ceramic Coating Protection</a></li>
+                <li><a href="service-single.html">Engine Bay Detailing</a></li>
+                <li><a href="service-single.html">Headlight Restoration</a></li>
+            </ul> -->
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Contact Us</h5>
+            <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>No. 57, Jethawana Road, Colombo 14. </div>
+            <div><i class="icofont-envelope me-2 op-5"></i>info@anuragroup.lk</div>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Anura Group is a professionally managed business organization with a strong foundation in Sri Lankan
+                entrepreneurship. Since our establishment, we have focused on building sustainable businesses through
+                quality-driven operations, ethical governance, and customer-centric thinking.</p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+
+    <script>
+        (function () {
+            'use strict';
+
+            const track = document.getElementById('timelineTrack');
+            const dotsWrap = document.getElementById('timelineIndicators');
+            const container = document.querySelector('.timeline-carousel-container');
+            const prevBtn = document.querySelector('.timeline-prev');
+            const nextBtn = document.querySelector('.timeline-next');
+            const scrollHint = document.getElementById('timelineScrollHint');
+
+            if (!track || !container) return;
+
+            /* ── Collect original items ─────────────────────────── */
+            const origItems = Array.from(track.querySelectorAll('.timeline-item:not(.tl-clone)'));
+            const origCount = origItems.length;
+
+            let perView = 4;
+            let current = 0;          /* logical index into origItems */
+            let isTransitioning = false;
+            let autoTimer;
+            let userInteracted = false;
+
+            /* Hide scroll hint after first user interaction */
+            function hideScrollHint() {
+                if (!userInteracted && scrollHint) {
+                    userInteracted = true;
+                    scrollHint.classList.add('hidden');
+                }
+            }
+
+            function getPerView() {
+                const w = window.innerWidth;
+                if (w >= 1200) return 4;
+                if (w >= 768) return 3;
+                if (w >= 480) return 2;
+                return 1;
+            }
+
+            /* ── Clone buffer ───────────────────────────────────── */
+            function setupClones() {
+                track.querySelectorAll('.tl-clone').forEach(el => el.remove());
+
+                /* Prepend: last perView originals */
+                for (let i = perView - 1; i >= 0; i--) {
+                    const src = origItems[(origCount - perView + i + origCount) % origCount];
+                    const clone = src.cloneNode(true);
+                    clone.classList.add('tl-clone');
+                    track.insertBefore(clone, track.firstChild);
+                }
+
+                /* Append: first perView originals */
+                for (let i = 0; i < perView; i++) {
+                    const clone = origItems[i % origCount].cloneNode(true);
+                    clone.classList.add('tl-clone');
+                    track.appendChild(clone);
+                }
+            }
+
+            function itemWidthPx() {
+                const firstItem = track.querySelector('.timeline-item');
+                return firstItem ? firstItem.offsetWidth : 200;
+            }
+
+            function setTransform(idx, animate) {
+                const totalIdx = perView + idx;          /* perView prepended clones offset */
+                const px = totalIdx * itemWidthPx();
+                track.style.transition = animate
+                    ? 'transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    : 'none';
+                track.style.transform = 'translateX(-' + px + 'px)';
+            }
+
+            /* ── Dots ───────────────────────────────────────────── */
+            function totalDots() { return Math.ceil(origCount / perView); }
+
+            function activeDotIdx() {
+                const norm = ((current % origCount) + origCount) % origCount;
+                return Math.floor(norm / perView);
+            }
+
+            function buildDots() {
+                dotsWrap.innerHTML = '';
+                const n = totalDots();
+                for (let i = 0; i < n; i++) {
+                    const btn = document.createElement('button');
+                    btn.className = 'timeline-indicator-dot';
+                    btn.setAttribute('aria-label', 'Page ' + (i + 1));
+                    btn.addEventListener('click', () => { goTo(i * perView); resetAuto(); hideScrollHint(); });
+                    dotsWrap.appendChild(btn);
+                }
+                updateDots();
+            }
+
+            function updateDots() {
+                const active = activeDotIdx();
+                dotsWrap.querySelectorAll('.timeline-indicator-dot')
+                    .forEach((d, i) => d.classList.toggle('active', i === active));
+            }
+
+            /* ── Movement ───────────────────────────────────────── */
+            function goTo(idx, animate = true) {
+                current = idx;
+                setTransform(current, animate);
+                updateDots();
+                if (animate) {
+                    isTransitioning = true;
+                    setTimeout(() => { isTransitioning = false; }, 700);
+                }
+            }
+
+            function next() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                current++;
+                setTransform(current, true);
+                updateDots();
+
+                if (current >= origCount) {
+                    setTimeout(() => {
+                        current = current % origCount;
+                        setTransform(current, false);
+                        updateDots();
+                        isTransitioning = false;
+                    }, 660);
+                } else {
+                    setTimeout(() => { isTransitioning = false; }, 700);
+                }
+            }
+
+            function prev() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                current--;
+                setTransform(current, true);
+                updateDots();
+
+                if (current < 0) {
+                    setTimeout(() => {
+                        current = origCount + current;
+                        setTransform(current, false);
+                        updateDots();
+                        isTransitioning = false;
+                    }, 660);
+                } else {
+                    setTimeout(() => { isTransitioning = false; }, 700);
+                }
+            }
+
+            /* Expose globally so onclick="moveTimeline()" still works */
+            window.moveTimeline = function (dir) {
+                hideScrollHint();
+                if (dir > 0) { next(); resetAuto(); }
+                else { prev(); resetAuto(); }
+            };
+
+            /* ── Auto-play ──────────────────────────────────────── */
+            function startAuto() { autoTimer = setInterval(next, 4000); }
+            function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+            /* ── Touch / Swipe ──────────────────────────────────── */
+            let touchX = 0;
+            track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); hideScrollHint(); }
+            });
+
+            /* ── Init ───────────────────────────────────────────── */
+            function init() {
+                perView = getPerView();
+                current = 0;
+                setupClones();
+                /* Force reflow so offsetWidth is correct after DOM change */
+                track.style.transition = 'none';
+                void track.offsetWidth;
+                setTransform(current, false);
+                buildDots();
+            }
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(init, 200);
+            });
+
+            /* Run after full page load so images/fonts don't shift widths */
+            if (document.readyState === 'complete') {
+                init(); startAuto();
+            } else {
+                window.addEventListener('load', () => { init(); startAuto(); });
+            }
+
+        })();
+    </script>
+
+</body>
+
+</html>
