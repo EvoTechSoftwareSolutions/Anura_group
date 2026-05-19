@@ -171,6 +171,7 @@
             opacity: 0.6;
             transition: opacity 0.3s ease, filter 0.3s ease;
             pointer-events: none;
+            overflow: visible;
         }
 
         .milestone-card.active {
@@ -221,7 +222,8 @@
 
         .ms-text {
             margin-top: 4px;
-            width: 250px;
+            width: 100%;
+            max-width: 340px;
             font-size: 13px;
             line-height: 1.2;
             color: #bfbfbf;
@@ -354,13 +356,14 @@
 
             .ms-text {
                 font-size: 15px;
-                width: 280px;
+                width: 100%;
+                max-width: 300px;
             }
 
             .ms-icon {
-                width: 72px;
-                height: 72px;
-                flex-basis: 72px;
+                width: 96px;
+                height: 96px;
+                flex-basis: 0 0 96px;
             }
         }
     </style>
@@ -763,11 +766,7 @@
                     <div class="col-lg-4 col-sm-6">
                         <img src="images/Anura-Logo-03.png" class="logo-footer" alt="">
                         <div class="spacer-20"></div>
-                        <p>Anura Group is a professionally managed business organization with a strong foundation in Sri
-                            Lankan
-                            entrepreneurship. Since our establishment, we have focused on building sustainable
-                            businesses through
-                            quality-driven operations, ethical governance, and customer-centric thinking.</p>
+                        <p>Anura Group is a professionally managed business organization with a strong foundation in Sri Lankan entrepreneurship.</p>
 
                         <div class="social-icons mb-sm-30">
                             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -1052,7 +1051,15 @@
                     fo.setAttribute("width", "360");
                     fo.setAttribute("height", "100");
                     fo.setAttribute("data-index", index);
-                    fo.innerHTML = `<div xmlns="http://www.w3.org/1999/xhtml" class="milestone-card">${milestoneIcon(index)}<div class="ms-content"><div class="ms-year">${escapeHtml(item.year)}</div><div class="ms-title">${escapeHtml(item.title)}</div><div class="ms-text">${escapeHtml(item.text)}</div></div></div>`;
+                    fo.innerHTML = `
+  <div xmlns="http://www.w3.org/1999/xhtml" class="milestone-card">
+    <div class="ms-icon">${milestoneIcon(index)}</div>
+    <div class="ms-content">
+      <div class="ms-year">${escapeHtml(item.year)}</div>
+      <div class="ms-title">${escapeHtml(item.title)}</div>
+      <div class="ms-text">${escapeHtml(item.text)}</div>
+    </div>
+  </div>`;
                     milestoneLayer.appendChild(fo);
                 });
             }
@@ -1095,7 +1102,7 @@
                 car.style.top = `${screenY}px`;
                 car.style.transform = `translate(-50%,-50%) rotate(${angle}deg)`;
                 const isMobile = window.innerWidth < 450;
-                const foHeight = isMobile ? 90 : 100;
+                const foHeight = isMobile ? 100 : 220;
                 document.querySelectorAll(".milestone-card").forEach((card, i) => {
                     card.classList.toggle("active", progress >= milestones[i].progress);
                     const fo = milestoneLayer.querySelector(`[data-index="${i}"]`);
@@ -1122,8 +1129,8 @@
                 const zigzagWidth = Math.min(maxZigzagWidth, vw);
                 const minX = (vw - zigzagWidth) / 2 + padding;
                 const maxX = vw - (vw - zigzagWidth) / 2 - padding;
-                const foWidth = isMobile ? 260 : 380;
-                const foHeight = isMobile ? 90 : 100;
+                const foWidth = isMobile ? 280 : 340;
+                const foHeight = isMobile ? 100 : 220;
                 const msCenterX = Math.max(0, (vw - foWidth) / 2);
                 const screenMargin = isMobile ? 12 : 30;
                 const maxAvailableShift = Math.max(0, msCenterX - screenMargin);
